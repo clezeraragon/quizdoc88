@@ -31,31 +31,31 @@
                 @foreach($results as $result)
                     <table class="table table-bordered table-striped">
                         <tr class="test-option{{ $result->correct ? '-true' : '-false' }}">
-                            <th style="width: 10%">Question #{{ $i }}</th>
+                            <th style="width: 10%">Questão #{{ $i }}</th>
                             <th>{{ $result->question->question_text or '' }}</th>
                         </tr>
                         @if ($result->question->code_snippet != '')
                             <tr>
-                                <td>Code snippet</td>
+                                <td>trecho de código</td>
                                 <td><div class="code_snippet">{!! $result->question->code_snippet !!}</div></td>
                             </tr>
                         @endif
                         <tr>
-                            <td>Options</td>
+                            <td>Opções</td>
                             <td>
                                 <ul>
                                 @foreach($result->question->options as $option)
                                     <li style="@if ($option->correct == 1) font-weight: bold; @endif
                                         @if ($result->option_id == $option->id) text-decoration: underline @endif">{{ $option->option }}
-                                        @if ($option->correct == 1) <em>(correct answer)</em> @endif
-                                        @if ($result->option_id == $option->id) <em>(your answer)</em> @endif
+                                        @if ($option->correct == 1) <em>(resposta correta)</em> @endif
+                                        @if ($result->option_id == $option->id) <em>(sua resposta)</em> @endif
                                     </li>
                                 @endforeach
                                 </ul>
                             </td>
                         </tr>
                         <tr>
-                            <td>Answer Explanation</td>
+                            <td>Explicação</td>
                             <td>
                             {!! $result->question->answer_explanation  !!}
                                 @if ($result->question->more_info_link != '')
@@ -74,8 +74,8 @@
 
             <p>&nbsp;</p>
 
-            <a href="{{ route('tests.index') }}" class="btn btn-default">Take another quiz</a>
-            <a href="{{ route('results.index') }}" class="btn btn-default">See all my results</a>
+            <a href="{{ route('tests.index') }}" class="btn btn-default">Ir para outro quiz</a>
+            <a href="{{ route('results.index') }}" class="btn btn-default">Ver todos os meus resultados</a>
         </div>
     </div>
 @stop

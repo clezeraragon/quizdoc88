@@ -39,11 +39,11 @@ class QuestionsController extends Controller
         ];
 
         $correct_options = [
-            'option1' => 'Option #1',
-            'option2' => 'Option #2',
-            'option3' => 'Option #3',
-            'option4' => 'Option #4',
-            'option5' => 'Option #5'
+            'option1' => 'Opção #1',
+            'option2' => 'Opção #2',
+            'option3' => 'Opção #3',
+            'option4' => 'Opção #4',
+            'option5' => 'Opção #5'
         ];
 
         return view('questions.create', compact('correct_options') + $relations);
