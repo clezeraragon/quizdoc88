@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use DockQuiz\User;
 use Illuminate\Database\Seeder;
 
 class UserSeed extends Seeder

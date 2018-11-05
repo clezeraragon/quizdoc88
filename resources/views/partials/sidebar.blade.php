@@ -7,7 +7,7 @@
             data-slide-speed="200">
 
             <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}">
-                <a href="{{ route('tests.index') }}">
+                <a href="{{ route('all.topics') }}">
                     <i class="fa fa-gears"></i>
                     <span class="title">@lang('quickadmin.test.new')</span>
                 </a>

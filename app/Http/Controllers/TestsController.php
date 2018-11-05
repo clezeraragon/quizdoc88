@@ -40,6 +40,19 @@ class TestsController extends Controller
 
         return view('tests.create', compact('questions'));
     }
+    public function getTopicQuestsForId($id)
+    {
+        $questions = Topic::where('id',$id)->get();
+        return view('tests.create_test', compact('questions'));
+    }
+
+    public function getAllTopic()
+    {
+
+        $topics = Topic::all();
+
+        return view('tests.index', compact('topics'));
+    }
 
     /**
      * Store a newly solved Test in storage with results.
