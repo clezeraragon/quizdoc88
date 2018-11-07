@@ -14,7 +14,7 @@ RUN rm /etc/nginx/sites-enabled/default && \
 ADD docker/conf/supervisord.conf /etc/supervisord.conf
 
 # Copy start.sh
-ADD docker/scripts/start-local.sh /usr/bin/start-local.sh
+ADD docker/scripts/start.sh /usr/bin/start.sh
 
 # Setup directories
 RUN chmod 755 /usr/bin/start-local.sh && \
