@@ -17,7 +17,7 @@ ADD docker/conf/supervisord.conf /etc/supervisord.conf
 ADD docker/scripts/start.sh /usr/bin/start.sh
 
 # Setup directories
-RUN chmod 755 /usr/bin/start-local.sh && \
+RUN chmod 755 /usr/bin/start.sh && \
     rm -Rf /var/www/*
 
 # Copy application
