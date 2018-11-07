@@ -84,13 +84,14 @@
     <div class="content">
         <div class="title m-b-md">
             <div class="center-block">
-                <img src="{{asset('quickadmin/images/martin_doc88.jpeg')}}" style="width: 60%; margin-left: 20%">
+                <img src="{{asset('quickadmin/images/martin_doc88.jpeg')}}" style="width: 100%; margin-left: 0%">
+            </div>
+            <div class="links" style="margin-left: -20%">
+                <h1> Quiz Doc88 </h1>
             </div>
         </div>
 
-        <div class="links">
-            <h1> Quiz Doc88 </h1>
-        </div>
+
     </div>
 </div>
 </body>

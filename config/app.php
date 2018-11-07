@@ -183,6 +183,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Aschmelyun\Larametrics\LarametricsServiceProvider::class,
 
         /*
          * Application Service Providers...

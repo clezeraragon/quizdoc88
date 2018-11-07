@@ -1,41 +1,48 @@
-version: '2'
+version: '3.2'
 services:
 
-  # The Application
-  app:
-    build:
-      context: ./
-      dockerfile: app_dockerfile
-    working_dir: /var/www
-    volumes:
-      - ./:/var/www
-    environment:
-      - "DB_PORT=3306"
-      - "DB_HOST=database"
-
-  # The Web Server
-  web:
-    build:
-      context: ./
-      dockerfile: web_dockerfile
-    working_dir: /var/www
-    volumes_from:
-      - app
+  redis:
+    image: redis
+    restart: always
+    expose:
+      - "6379"
     ports:
-      - 8080:80
+      - "6379:6379"
 
-  # The Database
-  database:
-    image: mysql:5.6
-    volumes:
-      - dbdata:/var/lib/mysql
-    environment:
-      - "MYSQL_DATABASE=dockquiz"
-      - "MYSQL_USER=dockquiz"
-      - "MYSQL_PASSWORD=DockQuiz"
-      - "MYSQL_ROOT_PASSWORD=secret"
+  mysql:
+    image: mysql:5.7
+    expose:
+      - "3306"
     ports:
-        - "33061:3306"
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: rut3sql
+       MYSQL_DATABASE: dockquiz
+       MYSQL_USER: dockquiz
+       MYSQL_PASSWORD: DockQuiz
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html:rw
+    env_file: env-local/.env
+    ports:
+      - "8000:80"
+    links:
+      - redis
+      - mysql
+    environment:
+      TZ: America/Sao_Paulo
+      LANG: pt_BR.UTF-8
+      LANGUAGE: pt_BR.UTF-8
+      LC_CTYPE: pt_BR.UTF-8
+      LC_ALL: pt_BR.UTF-8
+      LC_TIME: pt_BR.UTF-8
 
 volumes:
-  dbdata:
+  data:

@@ -28,6 +28,9 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+    \Aschmelyun\Larametrics\Larametrics::routes();
+
     Route::get('/home', 'HomeController@index');
     Route::resource('tests', 'TestsController');
     Route::resource('roles', 'RolesController');
