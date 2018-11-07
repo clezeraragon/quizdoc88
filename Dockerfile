@@ -31,6 +31,6 @@ EXPOSE 80
 WORKDIR /var/www/html
 
 # Start the container
-CMD ["start-local.sh"]
+CMD ["start.sh"]
 
 
