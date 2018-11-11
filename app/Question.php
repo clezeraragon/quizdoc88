@@ -1,8 +1,10 @@
 <?php
+
 namespace DockQuiz;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use function PHPSTORM_META\elementType;
 
 /**
  * Class Question
@@ -13,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property text $code_snippet
  * @property text $answer_explanation
  * @property string $more_info_link
-*/
+ */
 class Question extends Model
 {
     use SoftDeletes;
@@ -45,4 +47,15 @@ class Question extends Model
     {
         return $this->hasMany(QuestionsOption::class, 'question_id')->withTrashed();
     }
+
+    public static function getTopic($id)
+    {
+        $result = self::find($id);
+        if (isset($result->topic)) {
+            return $result->topic->title;
+        } else {
+            return 'sem tópico';
+        }
+    }
+
 }

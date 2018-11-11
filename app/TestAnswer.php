@@ -16,7 +16,7 @@ class TestAnswer extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['user_id', 'test_id', 'question_id', 'option_id', 'correct'];
+    protected $fillable = ['user_id', 'test_id', 'question_id','topic_id', 'option_id', 'correct'];
 
     public static function boot()
     {
@@ -29,4 +29,5 @@ class TestAnswer extends Model
     {
         return $this->belongsTo(Question::class, 'question_id');
     }
+
 }

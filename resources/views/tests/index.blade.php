@@ -3,7 +3,7 @@
 @section('content')
     <h3 class="page-title">Meus Quizes</h3>
 
-    <div class="panel panel-info">
+    <div class="panel">
         <div class="panel-heading">
             {{--@lang('quickadmin.quiz')--}}
         </div>
@@ -12,12 +12,16 @@
                 <div class="col-xs-12">
                     <br>
                     @foreach($topics as $topic)
-                        <div  class="col-xs-3">
+                        <div class="col-xs-3">
                             <div class="panel panel-primary">
-                                <div class="panel-heading">{{$topic->title}}</div>
-                                <div class="panel-body">clique para visualizar o conteúdo</div>
-                                <div class="panel text-center">
-                                    <a href="{{route('all.quests.topic',$topic->id)}}" type="button" class="btn btn-success"> Visualizar</a>
+                                <div class="panel-heading"><h3 class="text-center">{{$topic->title}}</h3></div>
+                                <div class="panel-body">
+                                    <p>clique para visualizar o conteúdo</p>
+                                @if(\DockQuiz\Result::showForTopic($topic->id))
+                                {{--<div class="panel-collapse">--}}
+                                    <a href="{{route('get.quests.response',$topic->id)}}" type="button" class="btn btn-warning">Resultado</a>
+                               @endif
+                                    <a href="{{route('all.quests.topic',$topic->id)}}" type="button" class="btn btn-success"> Começar</a>
                                 </div>
                                 <br>
                             </div>

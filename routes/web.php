@@ -49,4 +49,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('all-topics','TestsController@getAllTopic')->name('all.topics');
     Route::get('all-quests-topic/{id}','TestsController@getTopicQuestsForId')->name('all.quests.topic');
+    Route::get('get-quests-response/{id}','ResultsController@showForTopic')->name('get.quests.response');
 });

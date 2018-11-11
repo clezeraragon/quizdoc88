@@ -26,6 +26,11 @@
                             <th>@lang('quickadmin.results.fields.result')</th>
                             <td>{{ $test->result }}/10</td>
                         </tr>
+                            <tr>
+                                <th>Tópico</th>
+                                <td>{{\DockQuiz\Question::getTopic($test->getTopicForQuestion->question_id)}}</td>
+                            </tr>
+
                     </table>
                 <?php $i = 1 ?>
                 @foreach($results as $result)

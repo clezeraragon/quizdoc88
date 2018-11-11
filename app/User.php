@@ -66,4 +66,8 @@ class User extends Authenticatable
 
         return false;
     }
+    public static function hasResponseTopic($id)
+    {
+
+    }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['tests.store']]) !!}
 

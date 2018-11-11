@@ -2,28 +2,26 @@
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['tests.store']]) !!}
-
+    {!! Form::open(['method' => 'POST', 'route' => ['tests.store'],'name' => 'store-quest']) !!}
+    <input type="hidden" name="topic_id" value="{{ $questions->id }}">
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('quickadmin.quiz')
         </div>
-
-        @if(count($questions) > 0)
+        {{$hasResponse}}
+        @if($questions->count() > 0)
             <div class="panel-body">
                 @php ($i = 1 )
-                @foreach($questions as $question)
+                    @foreach($questions->questions as $item)
 
-                    {{--{{dd($question->questions)}}--}}
-                    @foreach($question->questions as $item)
-
-                        @if ($i > 1) <hr /> @endif
+                        @if ($i > 1)
+                            <hr/> @endif
                         <div class="row">
                             <div class="col-xs-12 form-group">
                                 <div class="form-group">
-                                    <strong>Questão {{ $i }}.<br />{!! nl2br($item->question_text) !!}</strong>
+                                    <strong>Questão {{ $i }}.<br/>{!! nl2br($item->question_text) !!}</strong>
 
-                                    @if ($question->code_snippet != '')
+                                    @if ($questions->code_snippet != '')
                                         <div class="code_snippet">{!! $item->code_snippet !!}</div>
                                     @endif
 
@@ -46,12 +44,11 @@
                         </div>
                         @php( $i++)
                     @endforeach
-                @endforeach
             </div>
         @endif
     </div>
-
-    {!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger']) !!}
+    <button type="submit" class="btn btn-danger" {{$hasResponse}}>{{trans('quickadmin.submit_quiz')}}</button>
+    {{--{!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger','disable' => 'disable']) !!}--}}
     {!! Form::close() !!}
 @stop
 

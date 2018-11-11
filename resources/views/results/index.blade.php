@@ -15,6 +15,7 @@
                     @if(Auth::user()->isAdmin())
                         <th>@lang('quickadmin.results.fields.user')</th>
                     @endif
+                        <th>Tópico</th>
                         <th>@lang('quickadmin.results.fields.date')</th>
                         <th>Result</th>
                         <th>&nbsp;</th>
@@ -28,6 +29,7 @@
                             @if(Auth::user()->isAdmin())
                                 <td>{{ $result->user->name or '' }} ({{ $result->user->email or '' }})</td>
                             @endif
+                                <td>{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Question::getTopic($result->getTopicForQuestion->question_id):''}}</td>
                                 <td>{{ $result->created_at or '' }}</td>
                                 <td>{{ $result->result }}/10</td>
                                 <td>

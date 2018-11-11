@@ -4,6 +4,7 @@ namespace DockQuiz;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use DockQuiz\Topic;
 
 /**
  * Class Result
@@ -83,6 +84,20 @@ class Result extends Model
     public function question()
     {
         return $this->belongsTo(Question::class, 'question_id')->withTrashed();
+    }
+    public static function showForTopic($id)
+    {
+
+        $topic = Topic::find($id);
+
+        $test_answer = $topic->test_answers()->where('user_id', auth()->id())->first();
+
+        if (isset($test_answer->test_id)) {
+            return true;
+        }else{
+            return false;
+        }
+
     }
     
 }

@@ -5,6 +5,7 @@ namespace DockQuiz\Http\Controllers;
 use Auth;
 use DockQuiz\Test;
 use DockQuiz\TestAnswer;
+use DockQuiz\Topic;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreResultsRequest;
 use DockQuiz\Http\Requests\UpdateResultsRequest;
@@ -13,7 +14,7 @@ class ResultsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->except('index', 'show');
+//        $this->middleware('admin')->except('index', 'show');
     }
 
     /**
@@ -23,7 +24,7 @@ class ResultsController extends Controller
      */
     public function index()
     {
-        $results = Test::all()->load('user');
+        $results = Test::all()->load('user','getTopicForQuestion');
 
         if (!Auth::user()->isAdmin()) {
             $results = $results->where('user_id', '=', Auth::id());
@@ -40,7 +41,7 @@ class ResultsController extends Controller
      */
     public function show($id)
     {
-        $test = Test::find($id)->load('user');
+        $test = Test::find($id)->load('user','getTopicForQuestion');
 
         if ($test) {
             $results = TestAnswer::where('test_id', $id)
@@ -52,4 +53,24 @@ class ResultsController extends Controller
 
         return view('results.show', compact('test', 'results'));
     }
+    public function showForTopic($id)
+    {
+
+        $topic = Topic::find($id);
+
+            $test_answer = $topic->test_answers()->where('user_id', auth()->id())->first();
+
+
+        if (isset($test_answer->test_id)) {
+            $test = Test::find($test_answer->test_id)->load('user', 'getTopicForQuestion');
+            $results = TestAnswer::where('test_id', $id)
+                ->with('question')
+                ->with('question.options')
+                ->get()
+            ;
+            return view('results.show', compact('test', 'results'));
+        }
+
+    }
+
 }

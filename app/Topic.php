@@ -3,6 +3,7 @@ namespace DockQuiz;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Symfony\Component\CssSelector\Node\SelectorNode;
 
 /**
  * Class Topic
@@ -27,4 +28,9 @@ class Topic extends Model
     {
         return $this->hasMany(Question::class, 'topic_id')->withTrashed();
     }
+    public function test_answers()
+    {
+        return $this->hasMany(TestAnswer::class, 'topic_id')->withTrashed();
+    }
+
 }

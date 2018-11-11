@@ -27,4 +27,8 @@ class Test extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function getTopicForQuestion()
+    {
+        return $this->hasOne(TestAnswer::class, 'test_id')->withTrashed();
+    }
 }
