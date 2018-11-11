@@ -33,7 +33,7 @@ class TestsController extends Controller
     public function getTopicQuestsForId($id)
     {
         $questions = Topic::where('id', $id)->first();
-        $hasResponse = $questions->test_answers->toArray();
+        $hasResponse = $questions->test_answers()->where('user_id',auth()->id())->first();
 
         if ($hasResponse) {
             $hasResponse = 'disabled';

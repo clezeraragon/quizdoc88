@@ -8,7 +8,7 @@
         <div class="panel-heading">
             @lang('quickadmin.quiz')
         </div>
-        {{$hasResponse}}
+
         @if($questions->count() > 0)
             <div class="panel-body">
                 @php ($i = 1 )
