@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 <style>
     @import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
     body {

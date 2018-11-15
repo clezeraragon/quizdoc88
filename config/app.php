@@ -194,6 +194,9 @@ return [
         DockQuiz\Providers\EventServiceProvider::class,
         DockQuiz\Providers\RouteServiceProvider::class,
 
+        // Theme Service Providers
+        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+
     ],
 
     /*

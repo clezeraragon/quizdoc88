@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.roles.title')</h3>

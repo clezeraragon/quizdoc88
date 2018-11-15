@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'AdminLTE')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
 
 @section('content')
     <div class="row">
@@ -30,4 +36,4 @@
             <a href="{{ route('all.topics') }}" class="btn btn-success">Visualizar meus testes!</a>
         </div>
     </div>
-@endsection
+@stop

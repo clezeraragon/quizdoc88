@@ -51,3 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('all-quests-topic/{id}','TestsController@getTopicQuestsForId')->name('all.quests.topic');
     Route::get('get-quests-response/{id}','ResultsController@showForTopic')->name('get.quests.response');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -71,6 +71,7 @@
 <body>
 <div class="flex-center position-ref full-height">
     @if (Route::has('auth.login'))
+
         <div class="top-right links">
             @auth
                 <a href="{{ url('/dashboard') }}" class="button btn btn-primary">Dashboard</a>
