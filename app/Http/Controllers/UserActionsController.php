@@ -2,7 +2,7 @@
 
 namespace DockQuiz\Http\Controllers;
 
-use DockQuiz\UserAction;
+use DockQuiz\Models\UserAction;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreUserActionsRequest;
 use DockQuiz\Http\Requests\UpdateUserActionsRequest;

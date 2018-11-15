@@ -4,11 +4,11 @@ namespace DockQuiz\Http\Controllers;
 
 use DB;
 use Auth;
-use DockQuiz\Test;
-use DockQuiz\TestAnswer;
-use DockQuiz\Topic;
-use DockQuiz\Question;
-use DockQuiz\QuestionsOption;
+use DockQuiz\Models\Test;
+use DockQuiz\Models\TestAnswer;
+use DockQuiz\Models\Topic;
+use DockQuiz\Models\Question;
+use DockQuiz\Models\QuestionsOption;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreTestRequest;
 

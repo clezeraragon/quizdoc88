@@ -2,8 +2,8 @@
 
 namespace DockQuiz\Providers;
 
-use DockQuiz\Question;
-use DockQuiz\QuestionsOption;
+use DockQuiz\Models\Question;
+use DockQuiz\Models\QuestionsOption;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

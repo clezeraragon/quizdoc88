@@ -2,8 +2,9 @@
 
 namespace DockQuiz\Http\Controllers;
 
-use DockQuiz\Question;
-use DockQuiz\QuestionsOption;
+use DockQuiz\Models\Question;
+use DockQuiz\Models\QuestionsOption;
+use DockQuiz\Models\Topic;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreQuestionsRequest;
 use DockQuiz\Http\Requests\UpdateQuestionsRequest;
@@ -35,7 +36,7 @@ class QuestionsController extends Controller
     public function create()
     {
         $relations = [
-            'topics' => \DockQuiz\Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
+            'topics' => Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
         ];
 
         $correct_options = [
@@ -84,7 +85,7 @@ class QuestionsController extends Controller
     public function edit($id)
     {
         $relations = [
-            'topics' => \DockQuiz\Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
+            'topics' => Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
         ];
 
         $question = Question::findOrFail($id);
@@ -117,7 +118,7 @@ class QuestionsController extends Controller
     public function show($id)
     {
         $relations = [
-            'topics' => \DockQuiz\Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
+            'topics' => Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
         ];
 
         $question = Question::findOrFail($id);

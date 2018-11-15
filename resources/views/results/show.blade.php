@@ -28,7 +28,7 @@
                         </tr>
                             <tr>
                                 <th>Tópico</th>
-                                <td>{{\DockQuiz\Question::getTopic($test->getTopicForQuestion->question_id)}}</td>
+                                <td>{{\DockQuiz\Models\Question::getTopic($test->getTopicForQuestion->question_id)}}</td>
                             </tr>
 
                     </table>

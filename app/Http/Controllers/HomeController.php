@@ -3,10 +3,10 @@
 namespace DockQuiz\Http\Controllers;
 
 use DockQuiz\Http\Requests;
-use DockQuiz\Question;
-use DockQuiz\Result;
-use DockQuiz\Test;
-use DockQuiz\User;
+use DockQuiz\Models\Question;
+use DockQuiz\Models\Result;
+use DockQuiz\Models\Test;
+use DockQuiz\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

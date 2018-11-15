@@ -2,7 +2,8 @@
 
 namespace DockQuiz\Http\Controllers;
 
-use DockQuiz\QuestionsOption;
+use DockQuiz\Models\QuestionsOption;
+use DockQuiz\Models\Question;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreQuestionsOptionsRequest;
 use DockQuiz\Http\Requests\UpdateQuestionsOptionsRequest;
@@ -34,7 +35,7 @@ class QuestionsOptionsController extends Controller
     public function create()
     {
         $relations = [
-            'questions' => \DockQuiz\Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
+            'questions' => Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
         ];
 
         return view('questions_options.create', $relations);
@@ -63,7 +64,7 @@ class QuestionsOptionsController extends Controller
     public function edit($id)
     {
         $relations = [
-            'questions' => \DockQuiz\Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
+            'questions' => Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
         ];
 
         $questions_option = QuestionsOption::findOrFail($id);
@@ -96,7 +97,7 @@ class QuestionsOptionsController extends Controller
     public function show($id)
     {
         $relations = [
-            'questions' => \DockQuiz\Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
+            'questions' => Question::get()->pluck('question_text', 'id')->prepend('Please select', ''),
         ];
 
         $questions_option = QuestionsOption::findOrFail($id);

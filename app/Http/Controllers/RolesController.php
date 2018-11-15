@@ -2,7 +2,7 @@
 
 namespace DockQuiz\Http\Controllers;
 
-use DockQuiz\Role;
+use DockQuiz\Models\Role;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreRolesRequest;
 use DockQuiz\Http\Requests\UpdateRolesRequest;

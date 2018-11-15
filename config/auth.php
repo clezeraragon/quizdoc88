@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => DockQuiz\User::class,
+            'model' => DockQuiz\Models\User::class,
         ],
 
         // 'users' => [

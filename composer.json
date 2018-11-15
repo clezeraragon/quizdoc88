@@ -24,7 +24,8 @@
         "symfony/css-selector": "~4.0",
         "symfony/dom-crawler": "~4.0",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "filp/whoops" : "~2.0"
+        "filp/whoops" : "~2.0",
+        "reliese/laravel": "^0.0.13"
     },
     "autoload": {
         "classmap": [

@@ -29,7 +29,7 @@
                             @if(Auth::user()->isAdmin())
                                 <td>{{ $result->user->name or '' }} ({{ $result->user->email or '' }})</td>
                             @endif
-                                <td>{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Question::getTopic($result->getTopicForQuestion->question_id):''}}</td>
+                                <td>{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Models\Question::getTopic($result->getTopicForQuestion->question_id):''}}</td>
                                 <td>{{ $result->created_at or '' }}</td>
                                 <td>{{ $result->result }}/10</td>
                                 <td>

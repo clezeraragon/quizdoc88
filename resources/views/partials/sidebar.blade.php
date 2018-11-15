@@ -5,9 +5,9 @@
             data-keep-expanded="false"
             data-auto-scroll="true"
             data-slide-speed="200">
-
+            @if(!Auth::user()->isAdmin())
             <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}">
-                <a href="{{ route('all.topics') }}">
+                <a href="{{ route('proof.user') }}">
                     <i class="fa fa-gears"></i>
                     <span class="title">@lang('quickadmin.test.new')</span>
                 </a>
@@ -19,14 +19,26 @@
                     <span class="title">@lang('quickadmin.results.title')</span>
                 </a>
             </li>
-
+            @endif
             @if(Auth::user()->isAdmin())
+                <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}">
+                    <a href="{{ route('proof.dashboard') }}">
+                        <i class="fa fa-gears"></i>
+                        <span class="title">@lang('quickadmin.test.new')</span>
+                    </a>
+                </li>
+                <li class="{{ $request->segment(1) == 'proof' ? 'active' : '' }}">
+                    <a href="{{ route('proof.index') }}">
+                        <i class="fa fa-gears"></i>
+                        <span class="title">@lang('quickadmin.proofs.title')</span>
+                    </a>
+                </li>
             <li class="{{ $request->segment(1) == 'topics' ? 'active' : '' }}">
-                <a href="{{ route('topics.index') }}">
-                    <i class="fa fa-gears"></i>
-                    <span class="title">@lang('quickadmin.topics.title')</span>
-                </a>
-            </li>
+                    <a href="{{ route('topics.index') }}">
+                        <i class="fa fa-gears"></i>
+                        <span class="title">@lang('quickadmin.topics.title')</span>
+                    </a>
+                </li>
             <li class="{{ $request->segment(1) == 'questions' ? 'active' : '' }}">
                 <a href="{{ route('questions.index') }}">
                     <i class="fa fa-gears"></i>
