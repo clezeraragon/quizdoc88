@@ -29,7 +29,11 @@ class ServiceDashboard
     public static function getTotalAcertos($id)
     {
         $topic = new TestAnswer();
-        $result_topic = $topic->where('topic_id',$id)->where('correct',1)->get();
+
+        $result_topic = $topic->where('topic_id',$id)
+            ->where('correct',1)
+            ->where('user_id',auth()->id())
+            ->get();
 
         return $result_topic->count();
     }
