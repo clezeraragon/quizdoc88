@@ -93,32 +93,33 @@
             <div class="panel-group">
                 <div class="col-xs-12">
                     <br>
+{{--{{dd($topics)}}--}}
                     @foreach($topics as $topic)
                         <div class="content">
                             <div class="col-xs-3">
                                     <!-- BLOCK ITEM -->
                                     <div class="panel price panel-green">
                                         <div class="panel-heading arrow_box text-center">
-                                            <h3>{{$topic->title}}</h3>
+                                            <h3>{{$topic['title']}}</h3>
                                         </div>
                                         <div class="panel-body text-center">
-                                            <p class="lead" style="font-size:40px"><strong>{{DockQuiz\Service\ServiceDashboard::totalPorcento(DockQuiz\Service\ServiceDashboard::getTotalAcertos($topic->id),$topic->questions->count())}}%</strong></p>
+                                            <p class="lead" style="font-size:40px"><strong>{{$topic['percent']}}%</strong></p>
                                             <p>De Aproveitamento</p>
                                         </div>
                                         <ul class="list-group list-group-flush text-center">
                                             <i class="fas fa-address-book"></i>
-                                            <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Perguntas: </span>{{$topic->questions->count()}}</li>
-                                            <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Acertos: </span>{{DockQuiz\Service\ServiceDashboard::getTotalAcertos($topic->id)}}</li>
+                                            <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Perguntas: </span>{{$topic['total_questions']}}</li>
+                                            <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Acertos: </span>{{$topic['total_acertos']}}</li>
                                         </ul>
                                         <div class="panel-footer">
-                                            @if(\DockQuiz\Models\Result::showForTopic($topic->id))
-                                                {{--<div class="panel-collapse">--}}
-                                                <a href="{{route('get.quests.response',$topic->id)}}" class="btn btn-lg btn-block " style="background-color:#5e5db7;color:white;">Resultado</a>
+                                            @if(\DockQuiz\Models\Result::showForTopic($topic['topic_id']))
+                                                <div class="panel-collapse">
+                                                <a href="{{route('get.quests.response',$topic['topic_id'])}}" class="btn btn-lg btn-block " style="background-color:#5e5db7;color:white;">Resultado</a>
                                             @endif
 
                                         </div>
                                         <div class="panel-footer">
-                                                <a href="{{route('all.quests.topic',$topic->id)}}" class="btn btn-lg btn-block" style="background-color:#45B6AF;color:white;" >Iniciar</a>
+                                                <a href="{{route('all.quests.topic',$topic['topic_id'])}}" class="btn btn-lg btn-block" style="background-color:#45B6AF;color:white;" >Iniciar</a>
                                         </div>
                                     </div>
                                 <hr>

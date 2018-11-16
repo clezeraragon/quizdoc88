@@ -106,10 +106,12 @@
                                             <p class="lead" style="font-size:40px"><strong>{{$proof['total_topic']}}</strong></p>
                                             <h4>Tópicos Relacionados</h4>
                                         </div>
+                                        @if(!Auth::user()->isAdmin())
                                         <ul class="list-group list-group-flush text-center">
                                             <i class="fas fa-address-book"></i>
                                             <li class="list-group-item"><i class="icon-ok text-success"></i> Boa Sorte </span><h2>{{ucfirst($proof['name'])}}</h2></li>
                                         </ul>
+                                        @endif
                                         <div class="panel-footer">
                                                 <a href="{{route('proof.topics',$proof['id'])}}" class="btn btn-lg btn-block" style="background-color:#45B6AF;color:white;" >Iniciar</a>
                                         </div>

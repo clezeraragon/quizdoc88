@@ -13,7 +13,8 @@ class ProofController extends Controller
     public function __construct(ServiceProof $serviceProof)
     {
       $this->serviceProof = $serviceProof;
-        $this->middleware('admin')->except('getProofForUser');
+        $this->middleware('admin')
+             ->except('getProofForUser','getAllTopicForId');
     }
 
     public function index()

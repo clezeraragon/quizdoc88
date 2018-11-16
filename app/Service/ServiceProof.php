@@ -12,11 +12,13 @@ namespace DockQuiz\Service;
 use DockQuiz\Models\Proof;
 use DockQuiz\Models\Topic;
 use DockQuiz\Models\TopicsXProof;
+use DockQuiz\Service\ServiceDashboard;
 
 class ServiceProof
 {
     private $proof;
     private $topicsXProof;
+
 
     public function __construct(Proof $proof, TopicsXProof $topicsXProof)
     {
@@ -47,9 +49,14 @@ class ServiceProof
       $data = [];
       $results = $this->proof->find($id);
 
-        foreach ($results as $item) {
-            $data[''] = null;
+        foreach ($results->topics as $item) {
+            $data['data']['topic_id'] = $item->id;
+            $data['data']['title'] = $item->title;
+            $data['data']['percent'] = ServiceDashboard::totalPorcento(ServiceDashboard::getTotalAcertos($item->id),$item->questions->count());
+            $data['data']['total_questions'] = $item->questions->count();
+            $data['data']['total_acertos'] = ServiceDashboard::getTotalAcertos($item->id);
      }
+     return $data;
     }
 
     public function getProofForUser()
@@ -61,7 +68,7 @@ class ServiceProof
             $data['data']['title'] = $proof->title;
             $data['data']['id'] = $proof->id;
             $data['data']['name'] = $proof->users->name;
-            $data['data']['total_topic'] = $proof->topics->count();
+            $data['data']['total_topic'] =  $proof->topics->count();
         }
         return $data;
     }

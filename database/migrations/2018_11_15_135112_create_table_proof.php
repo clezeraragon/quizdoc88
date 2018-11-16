@@ -30,6 +30,6 @@ class CreateTableProof extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proof');
+        Schema::dropIfExists('proofs');
     }
 }
