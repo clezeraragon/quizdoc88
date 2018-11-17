@@ -47,7 +47,7 @@ class ServiceProof
     public function getAllTopicForId($id)
     {
       $data = [];
-      $results = $this->proof->find($id);
+      $results = $this->proof->where('user_id',auth()->id())->first();
 
         foreach ($results->topics as $item) {
             $data['data']['topic_id'] = $item->id;

@@ -2,7 +2,7 @@
 
 namespace DockQuiz\Http\Controllers\Auth;
 
-use DockQuiz\User;
+use DockQuiz\Models\User;
 use Validator;
 use DockQuiz\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
