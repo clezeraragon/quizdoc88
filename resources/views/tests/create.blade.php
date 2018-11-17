@@ -5,13 +5,13 @@
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['tests.store']]) !!}
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.quiz')
         </div>
         <?php //dd($questions) ?>
     @if(count($questions) > 0)
-        <div class="panel-body">
+        <div class="card-body">
         <?php $i = 1; ?>
         @foreach($questions as $question)
             @if ($i > 1) <hr /> @endif

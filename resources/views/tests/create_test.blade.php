@@ -4,13 +4,13 @@
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['tests.store'],'name' => 'store-quest']) !!}
     <input type="hidden" name="topic_id" value="{{ $questions->id }}">
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.quiz')
         </div>
 
         @if($questions->count() > 0)
-            <div class="panel-body">
+            <div class="card-body">
                 @php ($i = 1 )
                     @foreach($questions->questions as $item)
 

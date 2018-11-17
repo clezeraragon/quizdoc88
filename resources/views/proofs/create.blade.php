@@ -10,12 +10,12 @@
     <h3 class="page-title">@lang('quickadmin.proofs.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['proof.store']]) !!}
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.create')
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
             <div class="col-xs-12">
                 <div class="col-xs-6 form-group">
                     {!! Form::label('title', 'Titulo da Prova*', ['class' => 'control-label']) !!}

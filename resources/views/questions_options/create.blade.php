@@ -4,12 +4,12 @@
     <h3 class="page-title">@lang('quickadmin.questions-options.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['questions_options.store']]) !!}
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.create')
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('question_id', 'question*', ['class' => 'control-label']) !!}

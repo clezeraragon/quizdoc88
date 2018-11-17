@@ -1,11 +1,5 @@
 @extends('layouts.app')
 <style>
-    @import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
-    body {
-        padding-top: 30px;
-        padding-bottom: 30px;
-
-    }
     /* COMMON PRICING STYLES */
     .panel.price,
     .panel.price>.panel-heading{
@@ -132,7 +126,7 @@
 
         @section('javascript')
             @parent
-            <script src="{{ url('quickadmin/js') }}/timepicker.js"></script>
+            <!-- <script src="{{ url('quickadmin/js') }}/timepicker.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
             <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
             <script>
@@ -141,6 +135,6 @@
                     dateFormat: "{{ config('app.date_format_js') }}",
                     timeFormat: "hh:mm:ss"
                 });
-            </script>
+            </script> -->
 
 @endSection

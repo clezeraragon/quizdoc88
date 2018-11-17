@@ -7,12 +7,12 @@
         <a href="{{ route('questions.create') }}" class="btn btn-success">@lang('quickadmin.add_new')</a>
     </p>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.list')
         </div>
 
-        <div class="panel-body">
+        <div class="card-body">
             <table class="table table-bordered table-striped {{ count($questions) > 0 ? 'datatable' : '' }} dt-select">
                 <thead>
                     <tr>

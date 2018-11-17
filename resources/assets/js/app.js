@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6,6 +5,8 @@
  */
 
 require('./bootstrap');
+require('./font-awesome')
+
 // require('bootstrapvalidator');
 require('select2');
 
@@ -22,4 +23,3 @@ require('select2');
 // const app = new Vue({
 //     el: '#app'
 // });
-

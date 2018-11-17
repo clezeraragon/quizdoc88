@@ -5,12 +5,12 @@
     
     {!! Form::model($topic, ['method' => 'PUT', 'route' => ['topics.update', $topic->id]]) !!}
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.edit')
         </div>
 
-        <div class="panel-body">
+        <div class="card-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('title', 'Title*', ['class' => 'control-label']) !!}
