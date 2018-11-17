@@ -9,9 +9,9 @@
 namespace DockQuiz\Service;
 
 
-use DockQuiz\Test;
-use DockQuiz\TestAnswer;
-use DockQuiz\Topic;
+use DockQuiz\Models\Test;
+use DockQuiz\Models\TestAnswer;
+use DockQuiz\Models\Topic;
 
 class ServiceDashboard
 {
@@ -36,9 +36,6 @@ class ServiceDashboard
     public static function totalPorcento($total_acertos,$total_questions)
     {
         $result = $total_acertos * 100;
-
-        if(!$result) return 0;
-
         $result_calc = $result / $total_questions;
 
         return $result_calc;

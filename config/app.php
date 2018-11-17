@@ -184,6 +184,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Aschmelyun\Larametrics\LarametricsServiceProvider::class,
+        Reliese\Coders\CodersServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -193,9 +194,6 @@ return [
         DockQuiz\Providers\AuthServiceProvider::class,
         DockQuiz\Providers\EventServiceProvider::class,
         DockQuiz\Providers\RouteServiceProvider::class,
-
-        // Theme Service Providers
-        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 
     ],
 

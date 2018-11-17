@@ -3,7 +3,7 @@
 namespace DockQuiz\Observers;
 
 use Auth;
-use DockQuiz\UserAction;
+use DockQuiz\Models\UserAction;
 
 class UserActionsObserver
 {

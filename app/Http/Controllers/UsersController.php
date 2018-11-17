@@ -2,16 +2,20 @@
 
 namespace DockQuiz\Http\Controllers;
 
-use DockQuiz\User;
+use DockQuiz\Models\User;
+use DockQuiz\Service\ServiceUser;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreUsersRequest;
 use DockQuiz\Http\Requests\UpdateUsersRequest;
 
 class UsersController extends Controller
 {
-    public function __construct()
+    private $serviceUser;
+
+    public function __construct(ServiceUser $serviceUser)
     {
         $this->middleware('admin');
+        $this->serviceUser = $serviceUser;
     }
 
     /**
@@ -26,6 +30,11 @@ class UsersController extends Controller
         return view('users.index', compact('users'));
     }
 
+    public function lists(Request $request)
+    {
+        return $this->serviceUser->lists($request);
+    }
+
     /**
      * Show the form for creating new User.
      *
@@ -34,7 +43,7 @@ class UsersController extends Controller
     public function create()
     {
         $relations = [
-            'roles' => \DockQuiz\Role::get()->pluck('title', 'id')->prepend('Please select', ''),
+            'roles' => \DockQuiz\Models\Role::get()->pluck('title', 'id')->prepend('Please select', ''),
         ];
 
         return view('users.create', $relations);
@@ -63,7 +72,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $relations = [
-            'roles' => \DockQuiz\Role::get()->pluck('title', 'id')->prepend('Please select', ''),
+            'roles' => \DockQuiz\Models\Role::get()->pluck('title', 'id')->prepend('Please select', ''),
         ];
 
         $user = User::findOrFail($id);
@@ -96,7 +105,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $relations = [
-            'roles' => \DockQuiz\Role::get()->pluck('title', 'id')->prepend('Please select', ''),
+            'roles' => \DockQuiz\Models\Role::get()->pluck('title', 'id')->prepend('Please select', ''),
         ];
 
         $user = User::findOrFail($id);

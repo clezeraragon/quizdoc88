@@ -1,14 +1,14 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.roles.title')</h3>
     
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.view')
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">

@@ -2,6 +2,11 @@
 
 namespace DockQuiz\Http\Controllers;
 
+use DockQuiz\Http\Requests;
+use DockQuiz\Models\Question;
+use DockQuiz\Models\Result;
+use DockQuiz\Models\Test;
+use DockQuiz\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,18 +26,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $questions = 0;
-        $users = 0;
-        $quizzes = 0;
-        $average = 0;
-
-        return view('home')->with([
-            'questions' => $questions,
-            'users' => $users,
-            'quizzes' => $quizzes,
-            'average' => $average,
-        ]);
+        $questions = Question::count();
+        $users = User::whereNull('role_id')->count();
+        $quizzes = Test::count();
+        $average = Test::avg('result');
+        return view('home', compact('questions', 'users', 'quizzes', 'average'));
     }
 }

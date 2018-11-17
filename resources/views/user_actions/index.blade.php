@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.user-actions.title')</h3>
@@ -7,12 +7,12 @@
         
     </p>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.list')
         </div>
 
-        <div class="panel-body">
+        <div class="card-body">
             <table class="table table-bordered table-striped {{ count($user_actions) > 0 ? 'datatable' : '' }} ">
                 <thead>
                     <tr>
