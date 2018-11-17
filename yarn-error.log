@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.10.1/libexec/bin/yarn.js add fontawesome-free
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.10.1/libexec/bin/yarn.js dev
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/gabrielgelado/projetos/quizdoc88/node_modules/.bin
@@ -14,17 +14,13 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/fontawesome-free: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:61073:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:120166:22)
-      at emitTwo (events.js:126:13)
-      at Request.emit (events.js:214:7)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:121138:10)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:121060:12)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
+  SyntaxError: /Users/gabrielgelado/projetos/quizdoc88/package.json: Unexpected token < in JSON at position 965
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:1136:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:109:13
+      at <anonymous>
 
 npm manifest: 
   {
@@ -38,6 +34,7 @@ npm manifest:
     },
     "devDependencies": {
       "axios": "^0.17",
+  <<<<<<< HEAD
       "bootstrap": "^4.1.2",
       "cross-env": "^5.1",
       "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -47,20 +44,36 @@ npm manifest:
       "laravel-mix": "^2.0",
       "less": "^3.8.1",
       "less-loader": "^4.1.0",
+  =======
+      "bootstrap": "^4.0.0",
+      "cross-env": "^5.1",
+      "jquery": "^3.2",
+      "laravel-mix": "^2.0",
+  >>>>>>> 7037780846a54f7b2c5279e4ed7a83e9d3ad5f00
       "lodash": "^4.17.4",
       "popper.js": "^1.12",
       "select2": "^4.0.6-rc.1",
       "vue": "^2.5.7"
+  <<<<<<< HEAD
     },
     "dependencies": {
       "@ckeditor/ckeditor5-build-classic": "^1.0.0-beta.4",
+      "@fortawesome/fontawesome-free": "^5.5.0",
+      "@fortawesome/fontawesome-free-brands": "^5.0.13",
+      "@fortawesome/fontawesome-free-regular": "^5.0.13",
+      "@fortawesome/fontawesome-free-solid": "^5.0.13",
+      "@fortawesome/fontawesome-svg-core": "^1.2.8",
+      "@fortawesome/free-brands-svg-icons": "^5.5.0",
+      "@fortawesome/free-regular-svg-icons": "^5.5.0",
+      "@fortawesome/free-solid-svg-icons": "^5.5.0",
       "admin-lte": "3.0.0-alpha.2",
       "chart.js": "^2.7.2",
       "datatables.net": "^1.10.19",
       "datatables.net-bs4": "^1.10.19",
       "datatables.net-select": "^1.2.7",
-      "font-awesome": "^4.7.0",
       "webpack-jquery-ui": "^2.0.1"
+  =======
+  >>>>>>> 7037780846a54f7b2c5279e4ed7a83e9d3ad5f00
     }
   }
 
@@ -76,6 +89,70 @@ Lockfile:
     version "1.0.0-beta.4"
     resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-1.0.0-beta.4.tgz#c9b9b07d18cb9d99558ae89fd57b51ee6e6940b8"
     integrity sha1-ybmwfRjLnZlViuif1XtR7m5pQLg=
+  
+  "@fortawesome/fontawesome-common-types@^0.1.7":
+    version "0.1.7"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.7.tgz#4336c4b06d0b5608ff1215464b66fcf9f4795284"
+    integrity sha512-ego8jRVSHfq/iq4KRZJKQeUAdi3ZjGNrqw4oPN3fNdvTBnLCSntwVCnc37bsAJP9UB8MhrTfPnZYxkv2vpS4pg==
+  
+  "@fortawesome/fontawesome-common-types@^0.2.8":
+    version "0.2.8"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.8.tgz#8cacd1efd1aa956e1ef173f0abcf2ce1b7a0c66f"
+    integrity sha512-0sU7JDLdEeGQlWBSr5uEE6PZOM15YM1s9rFlpZV+WhNdX2V6Co3Sj0OW5el4F54X1Tw+nfxf4Cc3dUedudaDWg==
+  
+  "@fortawesome/fontawesome-free-brands@^5.0.13":
+    version "5.0.13"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-brands/-/fontawesome-free-brands-5.0.13.tgz#4d15ff4e1e862d5e4a4df3654f8e8acbd47e9c09"
+    integrity sha512-xC/sEPpfcJPvUbud2GyscLCLQlE2DVBYaTHVwuyVGliYBdYejSEYMINU8FN5A0xhO68yCbpCfMlBv6Gqby+jww==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.1.7"
+  
+  "@fortawesome/fontawesome-free-regular@^5.0.13":
+    version "5.0.13"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-regular/-/fontawesome-free-regular-5.0.13.tgz#eb78c30184e3f456a423a1dcfa0f682f7b50de4a"
+    integrity sha512-36lz9Idww1L4QaaTcv7GZiOeIP9emJFDUsedvRovI10kmwyd6rN0PKkIjnq0FB4foLhX4Rou8vnbCCmjtqiLug==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.1.7"
+  
+  "@fortawesome/fontawesome-free-solid@^5.0.13":
+    version "5.0.13"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.13.tgz#24b61aaf471a9d34a5364b052d64a516285ba894"
+    integrity sha512-b+krVnqkdDt52Yfev0x0ZZgtxBQsLw00Zfa3uaVWIDzpNZVtrEXuxldUSUaN/ihgGhSNi8VpvDAdNPVgCKOSxw==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.1.7"
+  
+  "@fortawesome/fontawesome-free@^5.5.0":
+    version "5.5.0"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.5.0.tgz#0c6c53823d04457ae669cd19567b8a21dbb4fcfd"
+    integrity sha512-p4lu0jfj5QN013ddArh99r3OXZ/fp9rbovs62LfaO70OMBsAXxtNd0lAq/97fitrscR0fqfd+/a5KNcp6Sh/0A==
+  
+  "@fortawesome/fontawesome-svg-core@^1.2.8":
+    version "1.2.8"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.8.tgz#b802b7f3d5b9d9d92ae92c18e865df468dcdf561"
+    integrity sha512-cvcMQZ5F8WSNSGMk9uWlkmZNfDzmdsWLRrTMrNwwihHcEmWRlIuSbDt+PQ/rXsnGmJnmLQJLFBT1cse/3swxbg==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.2.8"
+  
+  "@fortawesome/free-brands-svg-icons@^5.5.0":
+    version "5.5.0"
+    resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.5.0.tgz#50e020aced5b9652db1d2d9d7909c73561ff1f4a"
+    integrity sha512-R2I2eARMVofGTtfxe5+VaMRXiQYQQFoDkHj2Q1qZVn37eRFszDySvSlJuKTsqFRsOxoP4Iq+xIGFy/ppoSo3Wg==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.2.8"
+  
+  "@fortawesome/free-regular-svg-icons@^5.5.0":
+    version "5.5.0"
+    resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.5.0.tgz#15f59e2727f863acde11b34957d485657638b322"
+    integrity sha512-qXOglmsMJR3a//AtfTHYaAITODuTDV73IDtU95diP//wSU+md8umWryB6B38S9b5ECvH8eMN1zLa+np2Pw564g==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.2.8"
+  
+  "@fortawesome/free-solid-svg-icons@^5.5.0":
+    version "5.5.0"
+    resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.5.0.tgz#4d815df4bba076f209eb409bc56d9d830367a7c0"
+    integrity sha512-VawIT2owNP97EwehZmxkvZDhoKwEevU/1HOMkln6kc4OtfE+JKYr6DpyzQnHVWXvz/eFj36QElHNe6zT8gR+Tg==
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.2.8"
   
   "@mrmlnc/readdir-enhanced@^2.2.1":
     version "2.2.1"
