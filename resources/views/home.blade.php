@@ -1,18 +1,12 @@
-@extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
         <div class="col-md-10">
-            <div class="panel panel-default">
-                <div class="panel-heading">Bem vindo! Aqui estão alguns números sobre o Marvin Quiz.</div>
+            <div class="card">
+                <div class="card-header">Bem vindo! Aqui estão alguns números sobre o Marvin Quiz.</div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-3 text-center">
                             <h1>{{ $questions }}</h1>
@@ -36,4 +30,4 @@
             <a href="{{ route('all.topics') }}" class="btn btn-success">Visualizar meus testes!</a>
         </div>
     </div>
-@stop
+@endsection

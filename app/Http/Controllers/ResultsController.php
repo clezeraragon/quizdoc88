@@ -3,9 +3,9 @@
 namespace DockQuiz\Http\Controllers;
 
 use Auth;
-use DockQuiz\Test;
-use DockQuiz\TestAnswer;
-use DockQuiz\Topic;
+use DockQuiz\Models\Test;
+use DockQuiz\Models\TestAnswer;
+use DockQuiz\Models\Topic;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreResultsRequest;
 use DockQuiz\Http\Requests\UpdateResultsRequest;

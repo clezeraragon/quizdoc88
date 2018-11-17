@@ -32,7 +32,7 @@ services:
       - ./:/var/www/html:rw
     env_file: env-local/.env
     ports:
-      - "8003:80"
+      - "80:80"
     links:
       - redis
       - mysql

@@ -1,14 +1,14 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.results.title')</h3>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             @lang('quickadmin.list')
         </div>
 
-        <div class="panel-body">
+        <div class="card-body">
             <table class="table table-bordered table-striped {{ count($results) > 0 ? 'datatable' : '' }}">
                 <thead>
                     <tr>
@@ -29,7 +29,7 @@
                             @if(Auth::user()->isAdmin())
                                 <td>{{ $result->user->name or '' }} ({{ $result->user->email or '' }})</td>
                             @endif
-                                <td>{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Question::getTopic($result->getTopicForQuestion->question_id):''}}</td>
+                                <td>{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Models\Question::getTopic($result->getTopicForQuestion->question_id):''}}</td>
                                 <td>{{ $result->created_at or '' }}</td>
                                 <td>{{ $result->result }}/10</td>
                                 <td>

@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 <style>
     @import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
     body {
@@ -102,16 +102,16 @@
                                             <h3>{{$topic->title}}</h3>
                                         </div>
                                         <div class="panel-body text-center">
-                                            <p class="lead" style="font-size:40px"><strong>{{\DockQuiz\Service\ServiceDashboard::totalPorcento(\DockQuiz\Service\ServiceDashboard::getTotalAcertos($topic->id),$topic->questions->count())}}%</strong></p>
+                                            <p class="lead" style="font-size:40px"><strong>{{DockQuiz\Service\ServiceDashboard::totalPorcento(DockQuiz\Service\ServiceDashboard::getTotalAcertos($topic->id),$topic->questions->count())}}%</strong></p>
                                             <p>De Aproveitamento</p>
                                         </div>
                                         <ul class="list-group list-group-flush text-center">
                                             <i class="fas fa-address-book"></i>
                                             <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Perguntas: </span>{{$topic->questions->count()}}</li>
-                                            <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Acertos: </span>{{\DockQuiz\Service\ServiceDashboard::getTotalAcertos($topic->id)}}</li>
+                                            <li class="list-group-item"><i class="icon-ok text-success"></i> Total de Acertos: </span>{{DockQuiz\Service\ServiceDashboard::getTotalAcertos($topic->id)}}</li>
                                         </ul>
                                         <div class="panel-footer">
-                                            @if(\DockQuiz\Result::showForTopic($topic->id))
+                                            @if(\DockQuiz\Models\Result::showForTopic($topic->id))
                                                 {{--<div class="panel-collapse">--}}
                                                 <a href="{{route('get.quests.response',$topic->id)}}" class="btn btn-lg btn-block " style="background-color:#5e5db7;color:white;">Resultado</a>
                                             @endif

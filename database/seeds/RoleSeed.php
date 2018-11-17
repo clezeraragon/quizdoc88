@@ -1,6 +1,6 @@
 <?php
 
-use DockQuiz\Role;
+use DockQuiz\Models\Role;
 use Illuminate\Database\Seeder;
 
 class RoleSeed extends Seeder

@@ -2,16 +2,21 @@
 
 namespace DockQuiz\Http\Controllers;
 
-use DockQuiz\Topic;
+use DockQuiz\Models\Topic;
+use DockQuiz\Service\ServiceTopic;
 use Illuminate\Http\Request;
 use DockQuiz\Http\Requests\StoreTopicsRequest;
 use DockQuiz\Http\Requests\UpdateTopicsRequest;
 
 class TopicsController extends Controller
 {
-    public function __construct()
+
+    private $serviceTopic;
+
+    public function __construct(ServiceTopic $serviceTopic)
     {
         $this->middleware('admin');
+        $this->serviceTopic = $serviceTopic;
     }
 
     /**
@@ -24,6 +29,10 @@ class TopicsController extends Controller
         $topics = Topic::all();
 
         return view('topics.index', compact('topics'));
+    }
+    public function lists(Request $request)
+    {
+        return $this->serviceTopic->lists($request);
     }
 
     /**

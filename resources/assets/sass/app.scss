@@ -1,9 +1,27 @@
-
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
+$fa-font-path: "/fonts/vendor/font-awesome/webfonts" !default;
+
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
+// Admin LTE
+@import "admin-lte.scss";
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all");
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}

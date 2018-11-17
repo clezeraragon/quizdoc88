@@ -48,10 +48,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('results_mass_destroy', ['uses' => 'ResultsController@massDestroy', 'as' => 'results.mass_destroy']);
 
     Route::get('all-topics','TestsController@getAllTopic')->name('all.topics');
+
     Route::get('all-quests-topic/{id}','TestsController@getTopicQuestsForId')->name('all.quests.topic');
     Route::get('get-quests-response/{id}','ResultsController@showForTopic')->name('get.quests.response');
+
+    Route::get('proof','ProofController@index')->name('proof.index');
+    Route::get('proof-dashboard','ProofController@getAllProofs')->name('proof.dashboard');
+    Route::get('proof-user','ProofController@getProofForUser')->name('proof.user');
+    Route::get('get-topics-proof/{id}','ProofController@getAllTopicForId')->name('proof.topics');
+    Route::get('proof-create','ProofController@create')->name('proof.create');
+    Route::post('proof-store','ProofController@store')->name('proof.store');
+
+    Route::get('lists-users/{per_page?}/{search?}','UsersController@lists')->name('users.lists');
+    Route::get('lists-topics/{per_page?}/{search?}','TopicsController@lists')->name('lists.topics');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
