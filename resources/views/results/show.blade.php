@@ -80,8 +80,11 @@
             </div>
 
             <p>&nbsp;</p>
-
+            @if(Auth::user()->isAdmin())
             <a href="{{ route('proof.dashboard') }}" class="btn btn-info">Ir para meus exames</a>
+                @else
+                <a href="{{ route('proof.user') }}" class="btn btn-info">Ir para meus exames</a>
+            @endif
             <a href="{{ route('results.index') }}" class="btn btn-success">Ver todos os meus resultados</a>
         </div>
     </div>

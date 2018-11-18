@@ -12,11 +12,11 @@ try {
   require('bootstrap');
   require('admin-lte');
   require('datatables.net-bs4')( $ );
-  require('datatables.net-buttons-bs4' )( $ );
-  require('datatables.net-responsive' )( window, $ );
+  // require('datatables.net-buttons-bs4' )( $ );
+  // require('datatables.net-responsive' )( window, $ );
   require('datatables.net-select');
   require('webpack-jquery-ui');
-  require('select2');
+  // require('select2');
 } catch (e) {
   console.log(e)
 }
