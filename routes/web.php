@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     \Aschmelyun\Larametrics\Larametrics::routes();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', 'HomeController@index')->name('home.index');
     Route::resource('tests', 'TestsController');
     Route::resource('roles', 'RolesController');
     Route::post('roles_mass_destroy', ['uses' => 'RolesController@massDestroy', 'as' => 'roles.mass_destroy']);

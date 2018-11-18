@@ -36,13 +36,19 @@
             </li>
             @endif
             @if(Auth::user()->isAdmin())
+                    <li class="nav-link {{ $request->segment(1) == 'home' ? 'active' : '' }}">
+                        <a href="{{ route('home.index') }}">
+                            <i class="fa fa-th-large">  </i>
+                            <span class="title">@lang('quickadmin.dashboard')</span>
+                        </a>
+                    </li>
                     <li class="nav-link {{ $request->segment(1) == 'results' ? 'active' : '' }}">
                         <a href="{{ route('results.index') }}">
                             <i class="fa fa-book">  </i>
                             <span class="title">@lang('quickadmin.results_admin.result')</span>
                         </a>
                     </li>
-                <li class="nav-link {{ $request->segment(1) == 'tests' ? 'active' : '' }}">
+                <li class="nav-link {{ $request->segment(1) == 'proof-dashboard' ? 'active' : '' }}">
                     <a href="{{ route('proof.dashboard') }}">
                         <i class="fa fa-address-card">  </i>
                         <span class="title">@lang('quickadmin.test.new')</span>

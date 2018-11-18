@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+    <div class="container"><br>
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Bem vindo! Aqui estão alguns números sobre o Marvin Quiz.</div>
