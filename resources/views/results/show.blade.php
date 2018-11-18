@@ -23,8 +23,9 @@
                             <td>{{ $test->created_at or '' }}</td>
                         </tr>
                         <tr>
+                            {{--{{dd($test->result)}}--}}
                             <th>@lang('quickadmin.results.fields.result')</th>
-                            <td>{{ $test->result }}/10</td>
+                            <td>{{ $test->result }}/{{(isset($test->getTopicForQuestion->question_id))?\DockQuiz\Models\Question::countQuetionsForTopic($test->getTopicForQuestion->question_id):''}}</td>
                         </tr>
                             <tr>
                                 <th>Tópico</th>
@@ -34,8 +35,9 @@
                     </table>
                 <?php $i = 1 ?>
                 @foreach($results as $result)
+
                     <table class="table table-bordered table-striped">
-                        <tr class="test-option{{ $result->correct ? '-true' : '-false' }}">
+                        <tr class="{{ $result->correct ? 'table-success' : 'table-danger' }}">
                             <th style="width: 10%">Questão #{{ $i }}</th>
                             <th>{{ $result->question->question_text or '' }}</th>
                         </tr>
@@ -45,7 +47,7 @@
                                 <td><div class="code_snippet">{!! $result->question->code_snippet !!}</div></td>
                             </tr>
                         @endif
-                        <tr>
+                        <tr class="{{ $result->correct ? 'table-success' : 'table-danger' }}">
                             <td>Opções</td>
                             <td>
                                 <ul>
@@ -79,8 +81,8 @@
 
             <p>&nbsp;</p>
 
-            <a href="{{ route('tests.index') }}" class="btn btn-default">Ir para outro quiz</a>
-            <a href="{{ route('results.index') }}" class="btn btn-default">Ver todos os meus resultados</a>
+            <a href="{{ route('proof.dashboard') }}" class="btn btn-info">Ir para meus exames</a>
+            <a href="{{ route('results.index') }}" class="btn btn-success">Ver todos os meus resultados</a>
         </div>
     </div>
 @stop

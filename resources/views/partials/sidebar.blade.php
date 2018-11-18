@@ -36,33 +36,39 @@
             </li>
             @endif
             @if(Auth::user()->isAdmin())
+                    <li class="nav-link {{ $request->segment(1) == 'results' ? 'active' : '' }}">
+                        <a href="{{ route('results.index') }}">
+                            <i class="fa fa-book">  </i>
+                            <span class="title">@lang('quickadmin.results_admin.result')</span>
+                        </a>
+                    </li>
                 <li class="nav-link {{ $request->segment(1) == 'tests' ? 'active' : '' }}">
                     <a href="{{ route('proof.dashboard') }}">
-                        <i class="fa fa-gears"></i>
+                        <i class="fa fa-address-card">  </i>
                         <span class="title">@lang('quickadmin.test.new')</span>
                     </a>
                 </li>
                 <li class="nav-link {{ $request->segment(1) == 'proof' ? 'active' : '' }}">
                     <a href="{{ route('proof.index') }}">
-                        <i class="fa fa-gears"></i>
+                        <i class="fa fa-address-book"></i>
                         <span class="title">@lang('quickadmin.proofs.title')</span>
                     </a>
                 </li>
             <li class="nav-link {{ $request->segment(1) == 'topics' ? 'active' : '' }}">
                     <a href="{{ route('topics.index') }}">
-                        <i class="fa fa-gears"></i>
+                        <i class="fa fa-bookmark"></i>
                         <span class="title">@lang('quickadmin.topics.title')</span>
                     </a>
                 </li>
             <li class="nav-link {{ $request->segment(1) == 'questions' ? 'active' : '' }}">
                 <a href="{{ route('questions.index') }}">
-                    <i class="fa fa-gears"></i>
+                    <i class="fa fa-comment"></i>
                     <span class="title">@lang('quickadmin.questions.title')</span>
                 </a>
             </li>
             <li class="nav-link {{ $request->segment(1) == 'questions_options' ? 'active' : '' }}">
                 <a href="{{ route('questions_options.index') }}">
-                    <i class="fa fa-gears"></i>
+                    <i class="fa fa-comments"></i>
                     <span class="title">@lang('quickadmin.questions-options.title')</span>
                 </a>
             </li>
@@ -111,7 +117,7 @@
         </ul>
 
         <div class="center-block">
-        <img src="{{asset('quickadmin/images/martin_doc88.jpeg')}}" style="width: 100%; margin-left: 0%">
+        {{--<img src="{{asset('quickadmin/images/martin_doc88.jpeg')}}" style="width: 100%; margin-left: 0%">--}}
         </div>
     </nav>
 

@@ -13,7 +13,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-bordered table-striped {{ count($user_actions) > 0 ? 'datatable' : '' }} ">
+            <table id="users_actions" class="table table-bordered table-striped {{ count($user_actions) > 0 ? 'datatable' : '' }} ">
                 <thead>
                     <tr>
                         
@@ -47,4 +47,13 @@
         </div>
     </div>
 @stop
+@section('javascript')
+    <script>
+        $(document).ready(function() {
+            $('#users_actions').DataTable( {
+                responsive: true
+            } );
 
+        } );
+    </script>
+@endsection

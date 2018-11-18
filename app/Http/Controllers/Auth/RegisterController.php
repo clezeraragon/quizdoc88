@@ -6,6 +6,8 @@ use DockQuiz\Models\User;
 use Validator;
 use DockQuiz\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Mail;
+use DockQuiz\Mail\SendMailable;
 
 class RegisterController extends Controller
 {
@@ -62,10 +64,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Mail::to('krunal@appdividend.com')->send(new SendMailable($data['name']));
+
         return User::create([
             'name'     => $data['name'],
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
     }
 }

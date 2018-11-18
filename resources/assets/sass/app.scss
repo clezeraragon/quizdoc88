@@ -20,6 +20,9 @@ $fa-font-path: "/fonts/vendor/font-awesome/webfonts" !default;
 @import "admin-lte.scss";
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css");
+@import url("https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css");
+@import url("https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css");
 
 .navbar-laravel {
   background-color: #fff;

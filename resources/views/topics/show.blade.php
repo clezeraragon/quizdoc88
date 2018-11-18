@@ -20,7 +20,7 @@
 
             <p>&nbsp;</p>
 
-            <a href="{{ route('topics.index') }}" class="btn btn-default">@lang('quickadmin.back_to_list')</a>
+            <a href="{{ route('topics.index') }}" class="btn btn-success">@lang('quickadmin.back_to_list')</a>
         </div>
     </div>
 @stop

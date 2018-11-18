@@ -30,7 +30,7 @@
 
                 <div class="col-xs-6 form-group">
                     {!! Form::label('title', 'Topicos*', ['class' => 'control-label']) !!}
-                    {{Form::select('topics',[],null,['class' => 'js-example-basic-multiple','multiple'=>'multiple','name'=>'topics[]'])}}
+                    {!! Form::select('topics',[],null,['class' => 'js-example-basic-multiple','multiple'=>'multiple','name'=>'topics[]'])!!}
                     <p class="help-block"></p>
                     @if($errors->has('topics'))
                         <p class="help-block">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-xs-6 form-group">
                     {!! Form::label('title', 'Usuário*', ['class' => 'control-label']) !!}
-                    {{Form::select('users',[],null,['class' => 'js-data-ajax','multiple'=>'multiple','name'=>'users[]'])}}
+                    {!! Form::select('users',[],null,['class' => 'js-data-ajax','multiple'=>'multiple','name'=>'users[]'])!!}
                     <p class="help-block"></p>
                     @if($errors->has('users'))
                         <p class="help-block">

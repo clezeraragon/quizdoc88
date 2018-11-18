@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('all.topics') }}" class="btn btn-success">Visualizar meus testes!</a>
+            <a href="{{ route('proof.user') }}" class="btn btn-success">Visualizar meus testes!</a>
         </div>
     </div>
 @endsection

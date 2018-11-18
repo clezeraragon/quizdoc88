@@ -2,7 +2,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//use Illuminate\Support\Facades\Mail;
+//use DockQuiz\Mail\SendMailable;
 // Auth::routes();
 
 // Authentication Routes...
@@ -61,4 +62,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('lists-users/{per_page?}/{search?}','UsersController@lists')->name('users.lists');
     Route::get('lists-topics/{per_page?}/{search?}','TopicsController@lists')->name('lists.topics');
+
+
 });
+//Route::get('email',function (){
+//
+//    $name = 'Krunal';
+//    Mail::to('krunal@appdividend.com')->send(new SendMailable($name));
+//});

@@ -13,7 +13,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }} dt-select">
+            <table id="users" class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }} dt-select">
                 <thead>
                     <tr>
                         <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
@@ -59,5 +59,11 @@
 @section('javascript')
     <script>
         window.route_mass_crud_entries_destroy = '{{ route('users.mass_destroy') }}';
+        $(document).ready(function() {
+            $('#users').DataTable( {
+                responsive: true
+            } );
+
+        } );
     </script>
 @endsection

@@ -13,11 +13,13 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-bordered table-striped {{ count($roles) > 0 ? 'datatable' : '' }} dt-select">
+            <table id="roles" class="table table-bordered table-striped {{ count($roles) > 0 ? 'datatable' : '' }} dt-select">
                 <thead>
                     <tr>
-                        <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
+                        {{--<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>--}}
+                        <th>ID</th>
                         <th>@lang('quickadmin.roles.fields.title')</th>
+                        {{--<th>Criado</th>--}}
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -26,8 +28,9 @@
                     @if (count($roles) > 0)
                         @foreach ($roles as $role)
                             <tr data-entry-id="{{ $role->id }}">
-                                <td></td>
+                                <td>{{$role->id}}</td>
                                 <td>{{ $role->title }}</td>
+                                {{--<td>{{ $role->created_at->format('d/m/Y H:i:s') }}</td>--}}
                                 <td>
                                     <a href="{{ route('roles.show',[$role->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
                                     <a href="{{ route('roles.edit',[$role->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>
@@ -55,5 +58,11 @@
 @section('javascript')
     <script>
         window.route_mass_crud_entries_destroy = '{{ route('roles.mass_destroy') }}';
+        $(document).ready(function() {
+            $('#roles').DataTable( {
+                responsive: true
+            } );
+
+        } );
     </script>
 @endsection

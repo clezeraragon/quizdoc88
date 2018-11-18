@@ -60,10 +60,9 @@ class ResultsController extends Controller
 
             $test_answer = $topic->test_answers()->where('user_id', auth()->id())->first();
 
-
         if (isset($test_answer->test_id)) {
             $test = Test::find($test_answer->test_id)->load('user', 'getTopicForQuestion');
-            $results = TestAnswer::where('test_id', $id)
+            $results = TestAnswer::where('test_id', $test_answer->test_id)
                 ->with('question')
                 ->with('question.options')
                 ->get()

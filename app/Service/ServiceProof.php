@@ -35,41 +35,58 @@ class ServiceProof
     {
         $data = [];
 
-        foreach ($this->proof->all() as $proof) {
+        foreach ($this->proof->all() as $key => $proof) {
 
-            $data['data']['title'] = $proof->title;
-            $data['data']['id'] = $proof->id;
-            $data['data']['total_topic'] = $proof->topics->count();
+            $data[$key] = collect([
+                'title' => $proof->title,
+                'id' => $proof->id,
+                'name' => $proof->users->name,
+                'total_topic' => $proof->topics->count()
+
+            ]);
         }
         return $data;
     }
 
     public function getAllTopicForId($id)
     {
-      $data = [];
-      $results = $this->proof->where('user_id',auth()->id())->first();
+        $data = [];
+        $results = $this->proof->find($id);
 
-        foreach ($results->topics as $item) {
-            $data['data']['topic_id'] = $item->id;
-            $data['data']['title'] = $item->title;
-            $data['data']['percent'] = ServiceDashboard::totalPorcento(ServiceDashboard::getTotalAcertos($item->id),$item->questions->count());
-            $data['data']['total_questions'] = $item->questions->count();
-            $data['data']['total_acertos'] = ServiceDashboard::getTotalAcertos($item->id);
-     }
-     return $data;
+        if ($results->user_id == auth()->id() || auth()->user()->isAdmin()) {
+
+            foreach ($results->topics as $key => $item) {
+
+                $data[$key] = collect([
+                    'topic_id' => $item->id,
+                    'title' => $item->title,
+                    'percent' => ServiceDashboard::totalPorcento(ServiceDashboard::getTotalAcertos($item->id), $item->questions->count()),
+                    'total_questions' => $item->questions->count(),
+                    'total_acertos' => ServiceDashboard::getTotalAcertos($item->id)
+
+                ]);
+            }
+            return $data;
+        }
+        return [];
     }
+
 
     public function getProofForUser()
     {
         $data = [];
         $results = $this->proof->where('user_id', auth()->id())->get();
-        foreach ($results as $proof) {
+        foreach ($results as $key => $proof) {
 
-            $data['data']['title'] = $proof->title;
-            $data['data']['id'] = $proof->id;
-            $data['data']['name'] = $proof->users->name;
-            $data['data']['total_topic'] =  $proof->topics->count();
+            $data[$key] = collect([
+                'title' => $proof->title,
+                'id' => $proof->id,
+                'name' => $proof->users->name,
+                'total_topic' => $proof->topics->count()
+
+            ]);
         }
+
         return $data;
     }
 

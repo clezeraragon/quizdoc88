@@ -9,7 +9,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-bordered table-striped {{ count($results) > 0 ? 'datatable' : '' }}">
+            <table id="results" class="table table-bordered table-striped {{ count($results) > 0 ? 'datatable' : '' }}">
                 <thead>
                     <tr>
                     @if(Auth::user()->isAdmin())
@@ -31,7 +31,7 @@
                             @endif
                                 <td>{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Models\Question::getTopic($result->getTopicForQuestion->question_id):''}}</td>
                                 <td>{{ $result->created_at or '' }}</td>
-                                <td>{{ $result->result }}/10</td>
+                                <td>{{ $result->result }}/{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Models\Question::countQuetionsForTopic($result->getTopicForQuestion->question_id):''}}</td>
                                 <td>
                                     <a href="{{ route('results.show',[$result->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
                                 </td>
@@ -47,3 +47,14 @@
         </div>
     </div>
 @stop
+@section('javascript')
+    <script>
+        window.route_mass_crud_entries_destroy = '{{ route('questions.mass_destroy') }}';
+        $(document).ready(function() {
+            $('#results').DataTable( {
+                buttons: [ 'csv', 'excel', 'pdf', 'print' ]
+            } );
+
+        } );
+    </script>
+@endsection

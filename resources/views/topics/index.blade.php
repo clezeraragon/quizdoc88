@@ -13,12 +13,14 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-bordered table-striped {{ count($topics) > 0 ? 'datatable' : '' }} dt-select">
+            <table id="topic" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
+                        {{--<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>--}}
+                        <th>ID</th>
                         <th>@lang('quickadmin.topics.fields.title')</th>
-                        <th>&nbsp;</th>
+                        <th>Criado</th>
+                        <th></th>
                     </tr>
                 </thead>
                 
@@ -26,8 +28,9 @@
                     @if (count($topics) > 0)
                         @foreach ($topics as $topic)
                             <tr data-entry-id="{{ $topic->id }}">
-                                <td></td>
+                                <td>{{ $topic->id }}</td>
                                 <td>{{ $topic->title }}</td>
+                                <td>{{ $topic->created_at->format('d/m/Y H:i:s') }}</td>
                                 <td>
                                     <a href="{{ route('topics.show',[$topic->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
                                     <a href="{{ route('topics.edit',[$topic->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>
@@ -55,5 +58,11 @@
 @section('javascript')
     <script>
         window.route_mass_crud_entries_destroy = '{{ route('topics.mass_destroy') }}';
+        $(document).ready(function() {
+            $('#topic').DataTable( {
+                buttons: [ 'csv', 'excel', 'pdf', 'print' ]
+            } );
+
+        } );
     </script>
 @endsection

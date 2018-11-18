@@ -57,5 +57,14 @@ class Question extends Model
             return 'sem tópico';
         }
     }
+    public static function countQuetionsForTopic($id)
+    {
+        $result = self::find($id);
+        if (isset($result->topic)) {
+            return $result->topic->questions->count();
+        } else {
+            return 0;
+        }
+    }
 
 }
