@@ -11,59 +11,52 @@
         </div>
 
         <div class="card-body">
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('user_id', 'Usuário*', ['class' => 'control-label']) !!}
-                    {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('user_id'))
-                        <p class="help-block">
-                            {{ $errors->first('user_id') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('question_id', 'Questão*', ['class' => 'control-label']) !!}
-                    {!! Form::select('question_id', $questions, old('question_id'), ['class' => 'form-control']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('question_id'))
-                        <p class="help-block">
-                            {{ $errors->first('question_id') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('correct', 'Correta*', ['class' => 'control-label']) !!}
-                    {!! Form::text('correct', old('correct'), ['class' => 'form-control', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('correct'))
-                        <p class="help-block">
-                            {{ $errors->first('correct') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('date', 'Data*', ['class' => 'control-label']) !!}
-                    {!! Form::text('date', old('date'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('date'))
-                        <p class="help-block">
-                            {{ $errors->first('date') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            
+          <div class="form-group">
+              {!! Form::label('user_id', 'Usuário*', ['class' => 'control-label']) !!}
+              {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control']) !!}
+              <p class="help-block"></p>
+              @if($errors->has('user_id'))
+                  <p class="help-block">
+                      {{ $errors->first('user_id') }}
+                  </p>
+              @endif
+          </div>
+          <div class="form-group">
+              {!! Form::label('question_id', 'Questão*', ['class' => 'control-label']) !!}
+              {!! Form::select('question_id', $questions, old('question_id'), ['class' => 'form-control']) !!}
+              <p class="help-block"></p>
+              @if($errors->has('question_id'))
+                  <p class="help-block">
+                      {{ $errors->first('question_id') }}
+                  </p>
+              @endif
+          </div>
+          <div class="form-group">
+              {!! Form::label('correct', 'Correta*', ['class' => 'control-label']) !!}
+              {!! Form::text('correct', old('correct'), ['class' => 'form-control', 'placeholder' => '']) !!}
+              <p class="help-block"></p>
+              @if($errors->has('correct'))
+                  <p class="help-block">
+                      {{ $errors->first('correct') }}
+                  </p>
+              @endif
+          </div>
+          <div class="form-group">
+              {!! Form::label('date', 'Data*', ['class' => 'control-label']) !!}
+              {!! Form::text('date', old('date'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
+              <p class="help-block"></p>
+              @if($errors->has('date'))
+                  <p class="help-block">
+                      {{ $errors->first('date') }}
+                  </p>
+              @endif
+          </div>
+        </div>
+        <div class="card-footer">
+          {!! Form::submit(trans('quickadmin.update'), ['class' => 'btn btn-info']) !!}
         </div>
     </div>
 
-    {!! Form::submit(trans('quickadmin.update'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
 
