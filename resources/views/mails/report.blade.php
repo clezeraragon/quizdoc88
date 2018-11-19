@@ -311,7 +311,7 @@
                                 <tr>
                                     <td>
                                         <img src="{{asset('quickadmin/images/martin_doc88.jpeg')}}" style="width: 100%; margin-left: 0%">
-                                        <p>Ola {{$name}}!,</p>
+                                        <h1><strong>Ola {{ucfirst($name)}}!</strong></h1>
                                         <h3>Você acaba de se registrar em nosso site parabéns!!!</h3>
                                         <p>Nossa aquipe irá disponibilizar sua prova, espere pelo nosso contato!, assim que possivel te enviaremos um email te instruindo para o próximo passo. </p>
                                         <h3>Boa Sorte!</h3>

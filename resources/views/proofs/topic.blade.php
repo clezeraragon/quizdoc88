@@ -91,10 +91,11 @@
                 <div class="card text-white bg-danger mb-3">
                     <h5 class="card-header">Alerta!!</h5>
                     <div class="card-body">
-                        <p class="card-text">Você não possui topicos vinculados!. Por favor contatar o administrador do sistema.</p>
+                        <p class="card-text">Você não possui topicos vinculados!. Por favor contatar o administrador do
+                            sistema.</p>
                     </div>
                 </div>
-                @endif
+            @endif
             @foreach($topics as $topic)
 
 
@@ -116,21 +117,23 @@
                                 <li class="list-group-item text-dark text-center">
                                     <h5>{{$topic['total_acertos']}}</h5>
                                 </li>
-                                @endif
+                            @endif
 
                         </ul>
                         <div class="card-body text-center">
-                                <div class="panel-collapse">
-                                    @if(\DockQuiz\Models\Result::showForTopic($topic['topic_id']))
+                            <div class="panel-collapse">
+                                @if(\DockQuiz\Models\Result::showForTopic($topic['topic_id']))
                                     <a href="{{route('get.quests.response',$topic['topic_id'])}}"
                                        class="btn btn-lg btn-block btn-info">Resultado</a>
-                                        <hr>
-                                    @endif
+                                @else
+                                    <hr>
                                     <div class="panel-footer">
                                         <a href="{{route('all.quests.topic',$topic['topic_id'])}}"
                                            class="btn btn-lg btn-block" style="background-color:#45B6AF;color:white;">Iniciar</a>
                                     </div>
-                                </div>
+                                @endif
+
+                            </div>
                         </div>
                     </div>
                 </div>
