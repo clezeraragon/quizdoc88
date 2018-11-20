@@ -8,7 +8,7 @@ require('./bootstrap');
 require('./font-awesome');
 
 // require('bootstrapvalidator');
-require('select2');
+// require('select2');
 
 // window.Vue = require('vue');
 

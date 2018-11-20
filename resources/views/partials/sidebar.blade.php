@@ -21,98 +21,98 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
             @if(!Auth::user()->isAdmin())
-            <li class="nav-link {{ $request->segment(1) == 'tests' ? 'active' : '' }}">
-              <a href="{{ route('proof.user') }}">
-                <i class="fa fa-gears"></i>
-                <span class="title">@lang('quickadmin.test.new')</span>
-              </a>
-            </li>
+              <li class="nav-link {{ $request->segment(1) == 'tests' ? 'active' : '' }}">
+                <a href="{{ route('proof.user') }}">
+                  <i class="fa fa-gears"></i>
+                  <span class="title">@lang('quickadmin.test.new')</span>
+                </a>
+              </li>
 
-            <li class="nav-link {{ $request->segment(1) == 'results' ? 'active' : '' }}">
-              <a href="{{ route('results.index') }}">
-                <i class="fa fa-gears"></i>
-                <span class="title">@lang('quickadmin.results.title')</span>
-              </a>
-            </li>
+              <li class="nav-link {{ $request->segment(1) == 'results' ? 'active' : '' }}">
+                <a href="{{ route('results.index') }}">
+                  <i class="fa fa-gears"></i>
+                  <span class="title">@lang('quickadmin.results.title')</span>
+                </a>
+              </li>
             @endif
             @if(Auth::user()->isAdmin())
-                    <li class="nav-link {{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                        <a href="{{ route('home.index') }}">
-                            <i class="fa fa-th-large">  </i>
-                            <span class="title">@lang('quickadmin.dashboard')</span>
-                        </a>
-                    </li>
-                    <li class="nav-link {{ $request->segment(1) == 'results' ? 'active' : '' }}">
-                        <a href="{{ route('results.index') }}">
-                            <i class="fa fa-book">  </i>
-                            <span class="title">@lang('quickadmin.results_admin.result')</span>
-                        </a>
-                    </li>
-                <li class="nav-link {{ $request->segment(1) == 'proof-dashboard' ? 'active' : '' }}">
-                    <a href="{{ route('proof.dashboard') }}">
-                        <i class="fa fa-address-card">  </i>
-                        <span class="title">@lang('quickadmin.test.new')</span>
-                    </a>
-                </li>
-                <li class="nav-link {{ $request->segment(1) == 'proof' ? 'active' : '' }}">
-                    <a href="{{ route('proof.index') }}">
-                        <i class="fa fa-address-book"></i>
-                        <span class="title">@lang('quickadmin.proofs.title')</span>
-                    </a>
-                </li>
-            <li class="nav-link {{ $request->segment(1) == 'topics' ? 'active' : '' }}">
-                    <a href="{{ route('topics.index') }}">
-                        <i class="fa fa-bookmark"></i>
-                        <span class="title">@lang('quickadmin.topics.title')</span>
-                    </a>
-                </li>
-            <li class="nav-link {{ $request->segment(1) == 'questions' ? 'active' : '' }}">
-                <a href="{{ route('questions.index') }}">
-                    <i class="fa fa-comment"></i>
-                    <span class="title">@lang('quickadmin.questions.title')</span>
-                </a>
-            </li>
-            <li class="nav-link {{ $request->segment(1) == 'questions_options' ? 'active' : '' }}">
-                <a href="{{ route('questions_options.index') }}">
-                    <i class="fa fa-comments"></i>
-                    <span class="title">@lang('quickadmin.questions-options.title')</span>
-                </a>
-            </li>
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fa fa-users"></i>
-                    <p>
-                        @lang('quickadmin.user-management.title')
-                        <i class="right fa fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-link {{ $request->segment(1) == 'roles' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('roles.index') }}">
-                            <i class="fa fa-briefcase"></i>
-                            <span class="title">
-                                @lang('quickadmin.roles.title')
-                            </span>
-                        </a>
-                    </li>
-                    <li class="nav-link {{ $request->segment(1) == 'users' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('users.index') }}">
-                            <i class="fa fa-user"></i>
-                            <span class="title">
-                                @lang('quickadmin.users.title')
-                            </span>
-                        </a>
-                    </li>
-                    <li class="nav-link {{ $request->segment(1) == 'user_actions' ? 'active active-sub' : '' }}">
-                        <a href="{{ route('user_actions.index') }}">
-                            <i class="fa fa-th-list"></i>
-                            <span class="title">
-                                @lang('quickadmin.user-actions.title')
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+              <li class="nav-link {{ $request->segment(1) == 'home' ? 'active' : '' }}">
+                  <a href="{{ route('home.index') }}">
+                      <i class="fa fa-th-large">  </i>
+                      <span class="title">@lang('quickadmin.dashboard')</span>
+                  </a>
+              </li>
+              <li class="nav-link {{ $request->segment(1) == 'results' ? 'active' : '' }}">
+                  <a href="{{ route('results.index') }}">
+                      <i class="fa fa-book">  </i>
+                      <span class="title">@lang('quickadmin.results_admin.result')</span>
+                  </a>
+              </li>
+              <li class="nav-link {{ $request->segment(1) == 'proof-dashboard' ? 'active' : '' }}">
+                  <a href="{{ route('proof.dashboard') }}">
+                      <i class="fa fa-address-card">  </i>
+                      <span class="title">@lang('quickadmin.test.new')</span>
+                  </a>
+              </li>
+              <li class="nav-link {{ $request->segment(1) == 'topics' ? 'active' : '' }}">
+                      <a href="{{ route('topics.index') }}">
+                          <i class="fa fa-bookmark"></i>
+                          <span class="title">@lang('quickadmin.topics.title')</span>
+                      </a>
+                  </li>
+              <li class="nav-link {{ $request->segment(1) == 'questions' ? 'active' : '' }}">
+                  <a href="{{ route('questions.index') }}">
+                      <i class="fa fa-comment"></i>
+                      <span class="title">@lang('quickadmin.questions.title')</span>
+                  </a>
+              </li>
+              <li class="nav-link {{ $request->segment(1) == 'questions_options' ? 'active' : '' }}">
+                  <a href="{{ route('questions_options.index') }}">
+                      <i class="fa fa-comments"></i>
+                      <span class="title">@lang('quickadmin.questions-options.title')</span>
+                  </a>
+              </li>
+              <li class="nav-link {{ $request->segment(1) == 'proof' ? 'active' : '' }}">
+                  <a href="{{ route('proof.index') }}">
+                      <i class="fa fa-address-book"></i>
+                      <span class="title">@lang('quickadmin.proofs.title')</span>
+                  </a>
+              </li>
+              <li class="nav-item has-treeview menu-open">
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-users"></i>
+                      <p>
+                          @lang('quickadmin.user-management.title')
+                          <i class="right fa fa-angle-left"></i>
+                      </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                      <li class="nav-link {{ $request->segment(1) == 'roles' ? 'active active-sub' : '' }}">
+                          <a href="{{ route('roles.index') }}">
+                              <i class="fa fa-briefcase"></i>
+                              <span class="title">
+                                  @lang('quickadmin.roles.title')
+                              </span>
+                          </a>
+                      </li>
+                      <li class="nav-link {{ $request->segment(1) == 'users' ? 'active active-sub' : '' }}">
+                          <a href="{{ route('users.index') }}">
+                              <i class="fa fa-user"></i>
+                              <span class="title">
+                                  @lang('quickadmin.users.title')
+                              </span>
+                          </a>
+                      </li>
+                      <li class="nav-link {{ $request->segment(1) == 'user_actions' ? 'active active-sub' : '' }}">
+                          <a href="{{ route('user_actions.index') }}">
+                              <i class="fa fa-th-list"></i>
+                              <span class="title">
+                                  @lang('quickadmin.user-actions.title')
+                              </span>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
             @endif
             <li class="nav-link">
                 <a href="#logout" onclick="$('#logout').submit();">

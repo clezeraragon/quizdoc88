@@ -21,14 +21,14 @@
         <div class="card-body">
             <table id ="proof" class="table table-bordered table-strip" style="width:100%">
                 <thead>
-                <tr>
-                    {{--<th style="text-align:center;"><input type="checkbox" id="select-all"/></th>--}}
-                    <th>ID</th>
-                    <th>@lang('quickadmin.proofs.fields.title')</th>
-                    <th>&nbsp;Usuário</th>
-                    <th>Tópicos</th>
-                    <th></th>
-                </tr>
+                  <tr>
+                      {{--<th style="text-align:center;"><input type="checkbox" id="select-all"/></th>--}}
+                      <th>ID</th>
+                      <th>@lang('quickadmin.proofs.fields.title')</th>
+                      <th>&nbsp;Usuário</th>
+                      <th>Tópicos</th>
+                      <th></th>
+                  </tr>
                 </thead>
 
                 <tbody>
@@ -59,7 +59,11 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="3">@lang('quickadmin.no_entries_in_table')</td>
+                      <td></td>
+                      <td>@lang('quickadmin.no_entries_in_table')</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 @endif
                 </tbody>
@@ -72,8 +76,8 @@
     <script>
         window.route_mass_crud_entries_destroy = '{{ route('topics.mass_destroy') }}';
         $(document).ready(function() {
-           $('#proof').DataTable( {
-               buttons: [ 'csv', 'excel', 'pdf', 'print' ]
+          $('#proof').DataTable( {
+              //  buttons: [ 'csv', 'excel', 'pdf', 'print' ]
             } );
 
         } );

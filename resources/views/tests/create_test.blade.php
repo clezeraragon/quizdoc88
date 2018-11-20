@@ -10,45 +10,46 @@
         </div>
 
         @if($questions->count() > 0)
-            <div class="card-body">
-                @php ($i = 1 )
-                    @foreach($questions->questions as $item)
+          <div class="card-body">
+            @php ($i = 1 )
+              @foreach($questions->questions as $item)
 
-                        @if ($i > 1)
-                            <hr/> @endif
-                        <div class="row">
-                            <div class="col-xs-12 form-group">
-                                <div class="form-group">
-                                    <strong>Questão {{ $i }}.<br/>{!! nl2br($item->question_text) !!}</strong>
+                @if ($i > 1)
+                    <hr/> @endif
+                    <div class="form-group">
+                        <div class="form-group">
+                            <strong><p>Questão {{ $i }}</p>
+                              
+                            <h3>{!! nl2br($item->question_text) !!}</h3></strong>
 
-                                    @if ($questions->code_snippet != '')
-                                        <div class="code_snippet">{!! $item->code_snippet !!}</div>
-                                    @endif
+                            @if ($questions->code_snippet != '')
+                                <div class="code_snippet">{!! $item->code_snippet !!}</div>
+                            @endif
 
+                            <input
+                                    type="hidden"
+                                    name="questions[{{ $i }}]"
+                                    value="{{ $item->id }}">
+                            @foreach($item->options as $option)
+                                <br>
+                                <label class="radio-inline">
                                     <input
-                                            type="hidden"
-                                            name="questions[{{ $i }}]"
-                                            value="{{ $item->id }}">
-                                    @foreach($item->options as $option)
-                                        <br>
-                                        <label class="radio-inline">
-                                            <input
-                                                    type="radio"
-                                                    name="answers[{{ $item->id }}]"
-                                                    value="{{ $option->id }}">
-                                            {{ $option->option }}
-                                        </label>
-                                    @endforeach
-                                </div>
-                            </div>
+                                      type="radio"
+                                      name="answers[{{ $item->id }}]"
+                                      value="{{ $option->id }}"> {{ $option->option }}
+                                </label>
+                            @endforeach
                         </div>
-                        @php( $i++)
-                    @endforeach
-            </div>
+                    </div>
+                @php( $i++)
+              @endforeach
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info" {{$hasResponse}}>{{trans('quickadmin.submit_quiz')}}</button>
+            {{--{!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-info','disable' => 'disable']) !!}--}}
+          </div>
         @endif
     </div>
-    <button type="submit" class="btn btn-danger" {{$hasResponse}}>{{trans('quickadmin.submit_quiz')}}</button>
-    {{--{!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger','disable' => 'disable']) !!}--}}
     {!! Form::close() !!}
 @stop
 

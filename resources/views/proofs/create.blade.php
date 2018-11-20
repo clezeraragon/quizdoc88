@@ -17,7 +17,7 @@
         
         <div class="card-body">
             <div class="col-xs-12">
-                <div class="col-xs-6 form-group">
+                <div class="form-group">
                     {!! Form::label('title', 'Titulo da Prova*', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -28,7 +28,7 @@
                     @endif
                 </div>
 
-                <div class="col-xs-6 form-group">
+                <div class="form-group">
                     {!! Form::label('title', 'Topicos*', ['class' => 'control-label']) !!}
                     {!! Form::select('topics',[],null,['class' => 'js-example-basic-multiple','multiple'=>'multiple','name'=>'topics[]'])!!}
                     <p class="help-block"></p>
@@ -38,7 +38,7 @@
                         </p>
                     @endif
                 </div>
-                <div class="col-xs-6 form-group">
+                <div class="form-group">
                     {!! Form::label('title', 'Usuário*', ['class' => 'control-label']) !!}
                     {!! Form::select('users',[],null,['class' => 'js-data-ajax','multiple'=>'multiple','name'=>'users[]'])!!}
                     <p class="help-block"></p>
@@ -51,9 +51,11 @@
 
             </div>
         </div>
+        <div class="card-footer">
+          {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-info']) !!}
+        </div>
     </div>
 
-    {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
 @stop

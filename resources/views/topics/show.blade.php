@@ -9,17 +9,15 @@
         </div>
         
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <table class="table table-bordered table-striped">
-                        <tr><th>@lang('quickadmin.topics.fields.title')</th>
-                    <td>{{ $topic->title }}</td></tr>
-                    </table>
-                </div>
-            </div>
+            <table class="table table-bordered table-striped">
+                <tr>
+                  <th>@lang('quickadmin.topics.fields.title')</th>
+                  <td>{{ $topic->title }}</td>
+                </tr>
+            </table>
 
-            <p>&nbsp;</p>
-
+        </div>
+        <div class="card-footer">
             <a href="{{ route('topics.index') }}" class="btn btn-success">@lang('quickadmin.back_to_list')</a>
         </div>
     </div>

@@ -10,8 +10,7 @@
         </div>
         
         <div class="card-body">
-            <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="form-group">
                     {!! Form::label('name', 'Name*', ['class' => 'control-label']) !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -21,9 +20,7 @@
                         </p>
                     @endif
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="form-group">
                     {!! Form::label('email', 'Email*', ['class' => 'control-label']) !!}
                     {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -33,9 +30,7 @@
                         </p>
                     @endif
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="form-group">
                     {!! Form::label('password', 'Password', ['class' => 'control-label']) !!}
                     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -45,9 +40,7 @@
                         </p>
                     @endif
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="form-group">
                     {!! Form::label('role_id', 'Role*', ['class' => 'control-label']) !!}
                     {!! Form::select('role_id', $roles, old('role_id'), ['class' => 'form-control']) !!}
                     <p class="help-block"></p>
@@ -57,12 +50,13 @@
                         </p>
                     @endif
                 </div>
-            </div>
             
+        </div>
+        <div class="card-footer">
+          {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-info']) !!}
         </div>
     </div>
 
-    {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
 

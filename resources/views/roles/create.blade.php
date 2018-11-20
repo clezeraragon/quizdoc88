@@ -11,7 +11,7 @@
         
         <div class="card-body">
             <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="form-group">
                     {!! Form::label('title', 'Title*', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -24,9 +24,11 @@
             </div>
             
         </div>
+        <div class="card-footer">
+          {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-info']) !!}
+        </div>
     </div>
 
-    {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
 

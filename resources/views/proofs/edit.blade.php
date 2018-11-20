@@ -12,7 +12,7 @@
 
         <div class="card-body">
             <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="form-group">
                     {!! Form::label('title', 'Title*', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
