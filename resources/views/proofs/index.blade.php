@@ -4,6 +4,7 @@
     <div class="container-fluid">
     <div class="col-xs-12">
         <div class="col-xs-8">
+            <br>
             <h3 class="page-title text-center">@lang('quickadmin.proofs.title')</h3>
         </div>
         <div class="col-xs-4">

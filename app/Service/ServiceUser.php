@@ -32,7 +32,11 @@ class ServiceUser
                 ->where('name', 'like', '%' . $search . '%')
                 ->orWhere('email', 'like', '%' . $search . '%')
                 ->get();
+            return response()->json($results);
         }
+        $results = $this->user
+            ->select('id', 'name')->limit(5)
+            ->get();
         return response()->json($results);
     }
 }

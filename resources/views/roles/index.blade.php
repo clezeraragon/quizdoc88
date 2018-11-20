@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.roles.title')</h3>
+    <br>
+    <h3 class="page-title text-center">@lang('quickadmin.roles.title')</h3>
 
     <p>
         <a href="{{ route('roles.create') }}" class="btn btn-success">@lang('quickadmin.add_new')</a>

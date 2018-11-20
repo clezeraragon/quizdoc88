@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.users.title')</h3>
+    <br>
+    <h3 class="page-title text-center">@lang('quickadmin.users.title')</h3>
     
     {!! Form::model($user, ['method' => 'PUT', 'route' => ['users.update', $user->id]]) !!}
 

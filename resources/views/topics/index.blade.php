@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.topics.title')</h3>
-
+    <br>
+    <h3 class="page-title text-center">@lang('quickadmin.topics.title')</h3>
     <p>
         <a href="{{ route('topics.create') }}" class="btn btn-success">@lang('quickadmin.add_new')</a>
     </p>

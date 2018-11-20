@@ -33,5 +33,9 @@ class ServiceTopic
               ->get();
           return response()->json($results);
       }
+      $results = $this->topic
+          ->select('id', 'title')->limit(5)
+          ->get();
+      return response()->json($results);
   }
 }

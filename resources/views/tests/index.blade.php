@@ -85,7 +85,7 @@
 
 </style>
 @section('content')
-    <h3 class="page-title">Meus Quizes</h3>
+    <h3 class="page-title">Meus Exames</h3>
 
     <div class="panel">
 

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{{asset('/css/app.css')}}" />
 </header>
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.proofs.title')</h3>
+    <br>
+    <h3 class="page-title text-center">@lang('quickadmin.proofs.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['proof.store']]) !!}
 
     <div class="card">

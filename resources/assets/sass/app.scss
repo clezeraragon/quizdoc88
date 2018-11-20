@@ -23,7 +23,7 @@ $fa-font-path: "/fonts/vendor/font-awesome/webfonts" !default;
 @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css");
 @import url("https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css");
 @import url("https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css");
-
+@import 'custom';
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

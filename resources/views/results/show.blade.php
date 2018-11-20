@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.results.title')</h3>
+    <br>
+    <h3 class="page-title text-center">@lang('quickadmin.results.title')</h3>
 
     <div class="card">
         <div class="card-header">
@@ -43,26 +44,26 @@
                         </tr>
                         @if ($result->question->code_snippet != '')
                             <tr>
-                                <td>trecho de código</td>
-                                <td><div class="code_snippet">{!! $result->question->code_snippet !!}</div></td>
+                                <td class="text-center"><strong>Exemplo</strong></td>
+                                <td><pre class="prettyprint">{!! $result->question->code_snippet !!}</pre></td>
                             </tr>
                         @endif
                         <tr class="{{ $result->correct ? 'table-success' : 'table-danger' }}">
-                            <td>Opções</td>
+                            <td><strong>Opções</strong></td>
                             <td>
                                 <ul>
                                 @foreach($result->question->options as $option)
                                     <li style="@if ($option->correct == 1) font-weight: bold; @endif
                                         @if ($result->option_id == $option->id) text-decoration: underline @endif">{{ $option->option }}
-                                        @if ($option->correct == 1) <em>(resposta correta)</em> @endif
-                                        @if ($result->option_id == $option->id) <em>(sua resposta)</em> @endif
+                                        @if ($option->correct == 1) <em style="color: #165e1f;">(resposta correta)</em> @endif
+                                        @if ($result->option_id == $option->id) <em style="color: #165e1f;">(sua resposta)</em> @endif
                                     </li>
                                 @endforeach
                                 </ul>
                             </td>
                         </tr>
                         <tr>
-                            <td>Explicação</td>
+                            <td><strong>Explicação</strong></td>
                             <td>
                             {!! $result->question->answer_explanation  !!}
                                 @if ($result->question->more_info_link != '')

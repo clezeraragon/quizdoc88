@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.topics.title')</h3>
+    <br>
+    <h3 class="page-title text-center">@lang('quickadmin.topics.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['topics.store']]) !!}
 
     <div class="card">
