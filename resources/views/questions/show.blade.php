@@ -23,7 +23,8 @@
                       </tr>
                       <tr>
                         <th>@lang('quickadmin.questions.fields.code-snippet')</th>
-                        <td><pre class="prettyprint">{!! $question->code_snippet !!}</pre></td>
+
+                        <td><pre class="prettyprint">{!! ($question->code_snippet)?$question->code_snippet:'' !!}</pre></td>
                       </tr>
                       <tr>
                         <th>@lang('quickadmin.questions.fields.answer-explanation')</th>
