@@ -42,7 +42,7 @@
                             <th style="width: 10%">Questão #{{ $i }}</th>
                             <th>{{ $result->question->question_text or '' }}</th>
                         </tr>
-                        @if (isset($result->question->code_snippet))
+                        @if (!empty($result->question->code_snippet))
                             <tr>
                                 <td class="text-center"><strong>Exemplo</strong></td>
                                 <td><pre class="prettyprint">{!! $result->question->code_snippet !!}</pre></td>

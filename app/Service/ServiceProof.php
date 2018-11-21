@@ -40,7 +40,7 @@ class ServiceProof
             $data[$key] = collect([
                 'title' => $proof->title,
                 'id' => $proof->id,
-                'name' => $proof->users->name,
+                'name' => (isset($proof->users->name))?$proof->users->name:'',
                 'total_topic' => $proof->topics->count()
 
             ]);
