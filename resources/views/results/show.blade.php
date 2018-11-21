@@ -21,7 +21,7 @@
                         @endif
                         <tr>
                             <th>@lang('quickadmin.results.fields.date')</th>
-                            <td>{{ $test->created_at or '' }}</td>
+                            <td>{{ $test->created_at->format('d-m-Y H:i:s') }}</td>
                         </tr>
                         <tr>
                             {{--{{dd($test->result)}}--}}
