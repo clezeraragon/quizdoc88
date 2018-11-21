@@ -14,7 +14,7 @@
         </div>
 
         <div class="card-body">
-            <table id="question_option" class="table table-striped table-bordered nowrap">
+            <table id="question_option" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         {{--<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>--}}
@@ -25,7 +25,7 @@
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($questions_options) > 0)
                         @foreach ($questions_options as $questions_option)
@@ -34,15 +34,15 @@
                                 <td>{{ $questions_option->question->question_text or '' }}</td>
                                 <td>{{ $questions_option->option }}</td>
                                 <td>{{ $questions_option->correct == 1 ? 'Yes' : 'No' }}</td>
-                                <td>
-                                    <a href="{{ route('questions_options.show',[$questions_option->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
-                                    <a href="{{ route('questions_options.edit',[$questions_option->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>
+                                <td width="160px">
+                                    <a href="{{ route('questions_options.show',[$questions_option->id]) }}" class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{ route('questions_options.edit',[$questions_option->id]) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',
                                         'onsubmit' => "return confirm('".trans("quickadmin.are_you_sure")."');",
                                         'route' => ['questions_options.destroy', $questions_option->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::button('<i class="far fa-trash-alt"></i>', array('type' => 'submit','class' => 'btn btn-xs btn-danger')) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

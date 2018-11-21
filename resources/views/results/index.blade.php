@@ -36,7 +36,7 @@
                                 /{{(isset($result->getTopicForQuestion->question_id))?\DockQuiz\Models\Question::countQuetionsForTopic($result->getTopicForQuestion->question_id):''}}</td>
                             <td>
                                 <a href="{{ route('results.show',[$result->id]) }}"
-                                   class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
+                                   class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     @endforeach

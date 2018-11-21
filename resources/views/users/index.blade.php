@@ -34,14 +34,14 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->role->title or '' }}</td>
                                 <td>
-                                    <a href="{{ route('users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
-                                    <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>
+                                    <a href="{{ route('users.show',[$user->id]) }}" class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',
                                         'onsubmit' => "return confirm('".trans("quickadmin.are_you_sure")."');",
                                         'route' => ['users.destroy', $user->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::button('<i class="far fa-trash-alt"></i>', array('type' => 'submit','class' => 'btn btn-xs btn-danger')) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
