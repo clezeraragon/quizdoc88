@@ -7,6 +7,7 @@
       content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0"
       name="viewport"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta http-equiv="Content-type"
       content="text/html; charset=utf-8">
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
