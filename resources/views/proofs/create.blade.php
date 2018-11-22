@@ -1,9 +1,6 @@
 @extends('layouts.app')
 <header>
-    {{--<link rel="stylesheet" href="{{asset('multiselect-master/lib/google-code-prettify/prettify.css')}}" />--}}
-    {{--<link rel="stylesheet" href="{{asset('multiselect-master/css/style.css')}}" />--}}
-    {{--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />--}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--}}
     {{--<link rel="stylesheet" href="{{asset('/css/app.css')}}" />--}}
 </header>
 @section('content')
