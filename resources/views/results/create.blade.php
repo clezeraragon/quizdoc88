@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('correct', 'Correct*', ['class' => 'control-label']) !!}
-              {!! Form::text('correct', old('correct'), ['class' => 'form-control', 'placeholder' => '']) !!}
+              {!! Form::text('correct', old('correct'), ['class' => 'form-control', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('correct'))
                   <p class="help-block">
@@ -43,7 +43,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('date', 'Date*', ['class' => 'control-label']) !!}
-              {!! Form::text('date', old('date'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
+              {!! Form::text('date', old('date'), ['class' => 'form-control datetime', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('date'))
                   <p class="help-block">

@@ -24,7 +24,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('option', 'Option*', ['class' => 'control-label']) !!}
-              {!! Form::text('option', old('option'), ['class' => 'form-control', 'placeholder' => '']) !!}
+              {!! Form::text('option', old('option'), ['class' => 'form-control', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('option'))
                   <p class="help-block">

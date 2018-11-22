@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('option1', 'Opção #1', ['class' => 'control-label']) !!}
-              {!! Form::text('option1', old('option1'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+              {!! Form::text('option1', old('option1'), ['class' => 'form-control ', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('option1'))
                   <p class="help-block">
@@ -43,7 +43,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('option2', 'Opção #2', ['class' => 'control-label']) !!}
-              {!! Form::text('option2', old('option2'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+              {!! Form::text('option2', old('option2'), ['class' => 'form-control ', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('option2'))
                   <p class="help-block">
@@ -53,7 +53,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('option3', 'Opção #3', ['class' => 'control-label']) !!}
-              {!! Form::text('option3', old('option3'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+              {!! Form::text('option3', old('option3'), ['class' => 'form-control ', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('option3'))
                   <p class="help-block">
@@ -63,7 +63,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('option4', 'Opção #4', ['class' => 'control-label']) !!}
-              {!! Form::text('option4', old('option4'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+              {!! Form::text('option4', old('option4'), ['class' => 'form-control ', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('option4'))
                   <p class="help-block">
@@ -73,7 +73,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('option5', 'Opção #5', ['class' => 'control-label']) !!}
-              {!! Form::text('option5', old('option5'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+              {!! Form::text('option5', old('option5'), ['class' => 'form-control ', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('option5'))
                   <p class="help-block">
@@ -113,7 +113,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('more_info_link', 'Mais info no link', ['class' => 'control-label']) !!}
-              {!! Form::text('more_info_link', old('more_info_link'), ['class' => 'form-control', 'placeholder' => '']) !!}
+              {!! Form::text('more_info_link', old('more_info_link'), ['class' => 'form-control', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('more_info_link'))
                   <p class="help-block">

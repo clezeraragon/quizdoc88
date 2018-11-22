@@ -20,7 +20,7 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     {!! Form::label('title', 'Titulo da Prova*', ['class' => 'control-label']) !!}
-                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '','autocomplete' => 'off']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('title'))
                         <p class="help-block">

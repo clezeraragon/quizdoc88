@@ -38,7 +38,7 @@
                         <tr data-entry-id="{{ $proof->id }}">
                             <td>{{ $proof->id }}</td>
                             <td>{{ $proof->title }}</td>
-                            <td>{{ $proof->users->name }}</td>
+                            <td>{{ (isset($proof->users->name))?$proof->users->name:'' }}</td>
                             <td>
                                 @foreach($proof->topics as $topic)
                                     {{$topic->title.', '}}
