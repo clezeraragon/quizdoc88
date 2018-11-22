@@ -115,10 +115,11 @@
               </li>
             @endif
             <li class="nav-link">
-                <a href="#logout" onclick="$('#logout').submit();">
-                    <i class="fa fa-arrow-left"></i>
-                    <span class="title">@lang('quickadmin.logout')</span>
-                </a>
+                {{--<a href="#logout" onclick="$('#logout').submit();">--}}
+                    {{--<i class="fa fa-arrow-left"></i>--}}
+                    {{--<span class="title">@lang('quickadmin.logout')</span>--}}
+                {{--</a>--}}
+                <a href="{{ route('auth.logout') }}">  <i class="fa fa-arrow-left"></i>  <span class="title">@lang('quickadmin.logout')</span> </a>
             </li>
         </ul>
 
