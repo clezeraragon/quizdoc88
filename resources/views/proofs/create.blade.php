@@ -65,7 +65,7 @@
                 placeholder: 'Selecione os tópicos',
                 width: '100%',
                 ajax: {
-                    url: '{{route('lists.topics')}}',
+                    url: 'https://quiz.doc88.com.br/lists-topics',
                     dataType: 'json',
                     delay: 250,
                     processResults: function (data) {
@@ -87,7 +87,7 @@
                 placeholder: 'Selecione os usuários',
                 width: '100%',
                 ajax: {
-                    url: '{{route('users.lists')}}',
+                    url: 'https://quiz.doc88.com.br/lists-users',
                     dataType: 'json',
                     delay: 250,
                     processResults: function (data) {
