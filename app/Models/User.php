@@ -55,6 +55,22 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id')->withTrashed();
     }
+    public function tests_answers()
+    {
+        return $this->hasMany(TestAnswer::class,'user_id');
+    }
+    public function tests()
+    {
+        return $this->hasMany(Test::class,'user_id');
+    }
+    public function proofs()
+    {
+        return $this->hasMany(Proof::class,'user_id');
+    }
+    public function users_actios()
+    {
+        return $this->hasMany(UserAction::class,'user_id');
+    }
 
     public function isAdmin()
     {
@@ -66,8 +82,5 @@ class User extends Authenticatable
 
         return false;
     }
-    public static function hasResponseTopic($id)
-    {
 
-    }
 }

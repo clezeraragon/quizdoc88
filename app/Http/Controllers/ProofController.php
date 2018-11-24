@@ -32,6 +32,10 @@ class ProofController extends Controller
     {
       return $this->serviceProof->store($request);
     }
+    public function delete($id)
+    {
+        return $this->serviceProof->delete($id);
+    }
     public function getAllProofs()
     {
         $proofs = $this->serviceProof->getAllProofs();

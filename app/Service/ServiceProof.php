@@ -107,5 +107,9 @@ class ServiceProof
         }
         return redirect()->route('proof.index');
     }
+    public function delete($id)
+    {
+        dd($id);
+    }
 
 }
