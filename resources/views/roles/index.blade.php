@@ -33,14 +33,14 @@
                                 <td>{{ $role->title }}</td>
                                 {{--<td>{{ $role->created_at->format('d/m/Y H:i:s') }}</td>--}}
                                 <td>
-                                    <a href="{{ route('roles.show',[$role->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
-                                    <a href="{{ route('roles.edit',[$role->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>
+                                    <a href="{{ route('roles.show',[$role->id]) }}" class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{ route('roles.edit',[$role->id]) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',
                                         'onsubmit' => "return confirm('".trans("quickadmin.are_you_sure")."');",
                                         'route' => ['roles.destroy', $role->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::button('<i class="far fa-trash-alt"></i>', array('type' => 'submit','class' => 'btn btn-xs btn-danger')) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

@@ -54,7 +54,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('more_info_link', 'More info link', ['class' => 'control-label']) !!}
-              {!! Form::text('more_info_link', old('more_info_link'), ['class' => 'form-control', 'placeholder' => '']) !!}
+              {!! Form::text('more_info_link', old('more_info_link'), ['class' => 'form-control', 'placeholder' => '' ,'autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('more_info_link'))
                   <p class="help-block">

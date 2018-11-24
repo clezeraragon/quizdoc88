@@ -16,14 +16,20 @@ $fa-font-path: "/fonts/vendor/font-awesome/webfonts" !default;
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 
+// Select2
+@import '~select2/src/scss/_multiple.scss';
+@import '~select2/src/scss/core';
+
 // Admin LTE
 @import "admin-lte.scss";
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css");
 @import url("https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css");
 @import url("https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css");
-@import 'custom';
+@import 'custom.scss';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

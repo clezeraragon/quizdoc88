@@ -9,7 +9,7 @@ Route::get('/', function () {
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
-$this->post('logout', 'Auth\LoginController@logout')->name('auth.logout');
+$this->get('logout', 'Auth\LoginController@logout')->name('auth.logout');
 $this->get('oauth2google', 'Auth\Oauth2Controller@oauth2google')->name('oauth2google');
 $this->get('googlecallback', 'Auth\Oauth2Controller@googlecallback')->name('googlecallback');
 $this->get('oauth2facebook', 'Auth\Oauth2Controller@oauth2facebook')->name('oauth2facebook');

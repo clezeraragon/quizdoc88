@@ -1,10 +1,7 @@
 @extends('layouts.app')
 <header>
-    <link rel="stylesheet" href="{{asset('multiselect-master/lib/google-code-prettify/prettify.css')}}" />
-    <link rel="stylesheet" href="{{asset('multiselect-master/css/style.css')}}" />
-    {{--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />--}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}" />
+    {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--}}
+    {{--<link rel="stylesheet" href="{{asset('/css/app.css')}}" />--}}
 </header>
 @section('content')
     <br>
@@ -20,7 +17,7 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     {!! Form::label('title', 'Titulo da Prova*', ['class' => 'control-label']) !!}
-                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '','autocomplete' => 'off']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('title'))
                         <p class="help-block">
@@ -68,7 +65,7 @@
                 placeholder: 'Selecione os tópicos',
                 width: '100%',
                 ajax: {
-                    url: '{{route('lists.topics')}}',
+                    url: 'https://quiz.doc88.com.br/lists-topics',
                     dataType: 'json',
                     delay: 250,
                     processResults: function (data) {
@@ -90,7 +87,7 @@
                 placeholder: 'Selecione os usuários',
                 width: '100%',
                 ajax: {
-                    url: '{{route('users.lists')}}',
+                    url: 'https://quiz.doc88.com.br/lists-users',
                     dataType: 'json',
                     delay: 250,
                     processResults: function (data) {

@@ -7,10 +7,11 @@
       content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0"
       name="viewport"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta http-equiv="Content-type"
       content="text/html; charset=utf-8">
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<link href="{{ url('css/app.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/app.css',true) }}" rel="stylesheet" type="text/css" />
 
 <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
       rel="stylesheet"

@@ -14,7 +14,7 @@
         <div class="card-body">
           <div class="form-group">
               {!! Form::label('name', 'Name*', ['class' => 'control-label']) !!}
-              {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '']) !!}
+              {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '','autocomplete' => 'off']) !!}
               <p class="help-block"></p>
               @if($errors->has('name'))
                   <p class="help-block">

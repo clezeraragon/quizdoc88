@@ -31,15 +31,15 @@
                                 <td>{{ $topic->id }}</td>
                                 <td>{{ $topic->title }}</td>
                                 <td>{{ $topic->created_at->format('d/m/Y H:i:s') }}</td>
-                                <td>
-                                    <a href="{{ route('topics.show',[$topic->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
-                                    <a href="{{ route('topics.edit',[$topic->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>
+                                <td width="160px">
+                                    <a href="{{ route('topics.show',[$topic->id]) }}" class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{ route('topics.edit',[$topic->id]) }}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a>
                                     {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',
                                         'onsubmit' => "return confirm('".trans("quickadmin.are_you_sure")."');",
                                         'route' => ['topics.destroy', $topic->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::button('<i class="far fa-trash-alt"></i>', array('type' => 'submit','class' => 'btn btn-xs btn-danger')) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

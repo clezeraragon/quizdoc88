@@ -38,7 +38,7 @@
                         <tr data-entry-id="{{ $proof->id }}">
                             <td>{{ $proof->id }}</td>
                             <td>{{ $proof->title }}</td>
-                            <td>{{ $proof->users->name }}</td>
+                            <td>{{ (isset($proof->users->name))?$proof->users->name:'' }}</td>
                             <td>
                                 @foreach($proof->topics as $topic)
                                     {{$topic->title.', '}}
@@ -46,7 +46,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('topics.show',[$proof->id]) }}"
-                                   class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
+                                   class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 {{--<a href="{{ route('topics.edit',[$proof->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>--}}
                                 {!! Form::open(array(
                                 'style' => 'display: inline-block;',
