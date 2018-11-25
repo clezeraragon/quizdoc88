@@ -178,12 +178,15 @@ class ServiceProof
             foreach ($testAnswers as $key => $item) {
                 $data['id_test'] = $item['test_id'];
                 $item->forceDelete();
+
+                $test = $this->test->find($data['id_test']);
+
+                if ($test) {
+                    $test->forceDelete();
+                }
             }
         }
-
-        $this->test->find($data['id_test'])->forceDelete();
         $results->forceDelete();
-
         return redirect()->route('proof.index');
 
     }
