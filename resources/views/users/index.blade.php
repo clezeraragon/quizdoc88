@@ -17,7 +17,8 @@
             <table id="users" class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }} dt-select">
                 <thead>
                     <tr>
-                        <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
+                        {{--<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>--}}
+                        <th>ID</th>
                         <th>@lang('quickadmin.users.fields.name')</th>
                         <th>@lang('quickadmin.users.fields.email')</th>
                         <th>@lang('quickadmin.users.fields.role')</th>
@@ -29,7 +30,7 @@
                     @if (count($users) > 0)
                         @foreach ($users as $user)
                             <tr data-entry-id="{{ $user->id }}">
-                                <td></td>
+                                <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->role->title or '' }}</td>

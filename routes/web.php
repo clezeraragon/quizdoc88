@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('test-dashboard','ProofController@getAllProofs')->name('proof.dashboard');
     Route::get('test-user','ProofController@getProofForUser')->name('proof.user');
     Route::get('get-topics-test/{id}','ProofController@getAllTopicForId')->name('proof.topics');
+    Route::get('test-show/{id}','ProofController@showProofUserId')->name('proof.show');
     Route::get('test-create','ProofController@create')->name('proof.create');
     Route::post('test-store','ProofController@store')->name('proof.store');
     Route::post('test-delete/{id}','ProofController@delete')->name('proof.delete');

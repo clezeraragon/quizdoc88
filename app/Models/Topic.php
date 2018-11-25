@@ -32,5 +32,9 @@ class Topic extends Model
     {
         return $this->hasMany(TestAnswer::class, 'topic_id')->withTrashed();
     }
+    public function topic_x_proof()
+    {
+        return $this->hasOne(TopicsXProof::class, 'id_topic')->withTrashed();
+    }
 
 }

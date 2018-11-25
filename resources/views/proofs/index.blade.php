@@ -45,7 +45,7 @@
                                 @endforeach
                             </td>
                             <td>
-                                <a href="{{ route('topics.show',[$proof->id]) }}"
+                                <a href="{{ route('proof.show',[$proof->id]) }}"
                                    class="btn btn-xs btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 {{--<a href="{{ route('topics.edit',[$proof->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.edit')</a>--}}
                                 {!! Form::open(array(
@@ -53,7 +53,7 @@
                                 'method' => 'POST',
                                 'onsubmit' => "return confirm('".trans("quickadmin.are_you_sure")."');",
                                 'route' => ['proof.delete', $proof->id])) !!}
-                                {!! Form::submit(trans('quickadmin.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                {!! Form::button('<i class="far fa-trash-alt"></i>', array('type' => 'submit','class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>

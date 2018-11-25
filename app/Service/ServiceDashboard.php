@@ -26,14 +26,15 @@ class ServiceDashboard
         $this->testAnswer;
     }
 
-    public static function getTotalAcertos($id)
+    public static function getTotalAcertos($id,$id_user = null)
     {
         $topic = new TestAnswer();
 
-        $result_topic = $topic->where('topic_id',$id)
-            ->where('correct',1)
-            ->where('user_id',auth()->id())
-            ->get();
+        $result_topic = $topic
+                        ->where('topic_id',$id)
+                        ->where('correct',1)
+                        ->where('user_id',($id_user)?$id_user:auth()->id())
+                        ->get();
 
         return $result_topic->count();
     }

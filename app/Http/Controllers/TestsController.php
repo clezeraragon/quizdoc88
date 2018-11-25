@@ -59,7 +59,6 @@ class TestsController extends Controller
      */
     public function store(Request $request)
     {
-
         $result = 0;
 
         $test = Test::create([
@@ -80,6 +79,7 @@ class TestsController extends Controller
                 'user_id' => Auth::id(),
                 'test_id' => $test->id,
                 'topic_id' => $request->topic_id,
+                'proof_id' => $request->proof_id,
                 'question_id' => $question,
                 'option_id' => $request->input('answers.' . $question),
                 'correct' => $status,
