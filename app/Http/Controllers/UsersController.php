@@ -122,8 +122,21 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        $user->delete();
+
+
+        $user = User::find($id);
+        $user->users_actios()->forceDelete();
+        $user->tests_answers()->forceDelete();
+        $user->tests()->forceDelete();
+
+        foreach ($user->proofs as $proof) {
+
+            foreach ($proof->topics as $topic){
+              $topic->pivot->forceDelete();
+            }
+            $proof->forceDelete();
+        }
+        $user->forceDelete();
 
         return redirect()->route('users.index');
     }

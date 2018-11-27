@@ -46,6 +46,10 @@ class Proof extends Eloquent
 					->withPivot('id', 'deleted_at')
 					->withTimestamps();
 	}
+    public function topic_x_proof()
+    {
+        return $this->hasOne(\DockQuiz\Models\TopicsXProof::class,'id_proof');
+    }
 	public function users()
     {
         return $this->belongsTo( User::class,'user_id');

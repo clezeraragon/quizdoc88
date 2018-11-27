@@ -32,6 +32,10 @@ class ProofController extends Controller
     {
       return $this->serviceProof->store($request);
     }
+    public function delete($id)
+    {
+        return $this->serviceProof->delete($id);
+    }
     public function getAllProofs()
     {
         $proofs = $this->serviceProof->getAllProofs();
@@ -46,5 +50,10 @@ class ProofController extends Controller
     {
         $topics =  $this->serviceProof->getAllTopicForId($id);
         return view('proofs.topic', compact('topics'));
+    }
+    public function showProofUserId($id)
+    {
+        $results =  $this->serviceProof->showProofUserId($id);
+        return view('proofs.show', compact('results'));
     }
 }

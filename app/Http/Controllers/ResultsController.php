@@ -58,11 +58,15 @@ class ResultsController extends Controller
 
         $topic = Topic::find($id);
 
-            $test_answer = $topic->test_answers()->where('user_id', auth()->id())->first();
+            $test_answer = $topic->test_answers()
+                ->where('user_id', auth()->id())
+                ->where('proof_id', $topic->topic_x_proof->proof->id)
+                ->first();
 
         if (isset($test_answer->test_id)) {
             $test = Test::find($test_answer->test_id)->load('user', 'getTopicForQuestion');
             $results = TestAnswer::where('test_id', $test_answer->test_id)
+                ->where('proof_id',$topic->topic_x_proof->proof->id)
                 ->with('question')
                 ->with('question.options')
                 ->get()

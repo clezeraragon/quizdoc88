@@ -4,6 +4,7 @@
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['tests.store'],'name' => 'store-quest']) !!}
     <input type="hidden" name="topic_id" value="{{ $questions->id }}">
+    <input type="hidden" name="proof_id" value="{{ $questions->topic_x_proof->proof->id }}">
     <div class="card">
         <div class="card-header">
             @lang('quickadmin.quiz')
