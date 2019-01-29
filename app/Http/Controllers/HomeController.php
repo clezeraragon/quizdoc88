@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $questions = Question::count();
-        $users = User::whereNull('role_id')->count();
+        $users = User::where('role_id','<>',1)->count();
         $quizzes = Test::count();
         $average = Test::avg('result');
         return view('home', compact('questions', 'users', 'quizzes', 'average'));
