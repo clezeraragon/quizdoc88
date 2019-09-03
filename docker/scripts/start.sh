@@ -3,8 +3,6 @@
 echo "Setting variables"
 bash -x /tmp/add-env.sh
 
-php artisan migrate --force
-php artisan db:seed --force
 php artisan storage:link -q -n
 php artisan passport:install -q -n
 php artisan view:clear
