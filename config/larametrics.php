@@ -96,7 +96,7 @@ return [
     | If you would like to disable log storage, set this to false.
     |
     */
-    'logsWatched' => true,
+    'logsWatched' => false,
 
     /*
     |--------------------------------------------------------------------------
