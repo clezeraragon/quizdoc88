@@ -7,9 +7,8 @@ class UserSeed extends Seeder
 {
     public function run()
     {
-        DB::table((new User)->getTable())->truncate();
 
-        User::insert([
+        User::updateOrCreate([
             [
                 'id'             => 1,
                 'name'           => 'Admin',

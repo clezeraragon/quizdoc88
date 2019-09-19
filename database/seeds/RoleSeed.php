@@ -7,9 +7,8 @@ class RoleSeed extends Seeder
 {
     public function run()
     {
-        DB::table((new Role)->getTable())->truncate();
 
-        Role::insert([
+        Role::updateOrCreate([
             [
                 'id'    => 1,
                 'title' => 'Administrator (can create other users)',
