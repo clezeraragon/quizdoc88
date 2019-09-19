@@ -78,13 +78,13 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-md-4 text-center">
-                    <a href="{{ route('oauth2google') }}" class="btn btn-white"><i class="fab fa-google"></i> Google </a>
+                    <a href="#" class="btn btn-white"><i class="fab fa-google"></i> Google </a>
                   </div>
                   <div class="col-md-4 text-center">
-                    <a href="{{ route('oauth2facebook') }}" class="btn btn-white"><i class="fab fa-facebook"></i> Facebook </a>
+                    <a href="#" class="btn btn-white"><i class="fab fa-facebook"></i> Facebook </a>
                   </div>
                   <div class="col-md-4 text-center">
-                    <a href="{{ route('oauth2github') }}" class="btn btn-white"><i class="fab fa-github"></i> GitHub </a>
+                    <a href="#" class="btn btn-white"><i class="fab fa-github"></i> GitHub </a>
                   </div>
                 </div>
               </div>
